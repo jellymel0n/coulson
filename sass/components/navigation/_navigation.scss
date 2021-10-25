@@ -1,109 +1,223 @@
-.main-navigation {
-	display: block;
-	width: 100%;
+// .main-navigation {
+// 	display: block;
+// 	width: 100%;
 
-	ul {
-		display: none;
-		list-style: none;
-		margin: 0;
-		padding-left: 0;
+// 	ul {
+// 		display: none;
+// 		list-style: none;
+// 		margin: 0;
+// 		padding-left: 0;
 
-		ul {
-			box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
-			float: left;
-			position: absolute;
-			top: 100%;
-			left: -999em;
-			z-index: 99999;
+// 		ul {
+// 			box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
+// 			float: left;
+// 			position: absolute;
+// 			top: 100%;
+// 			left: -999em;
+// 			z-index: 99999;
+
+// 			ul {
+// 				left: -999em;
+// 				top: 0;
+// 			}
+
+// 			li {
+
+// 				&:hover > ul,
+// 				&.focus > ul {
+// 					display: block;
+// 					left: auto;
+// 				}
+// 			}
+
+// 			a {
+// 				width: 200px;
+// 			}
+
+// 			:hover > a,
+// 			.focus > a {
+// 			}
+
+// 			a:hover,
+// 			a.focus {
+// 			}
+// 		}
+
+// 		li:hover > ul,
+// 		li.focus > ul {
+// 			left: auto;
+// 		}
+// 	}
+
+// 	li {
+// 		position: relative;
+
+// 		&:hover > a,
+// 		&.focus > a {
+// 		}
+// 	}
+
+// 	a {
+// 		display: block;
+// 		text-decoration: none;
+// 	}
+
+// 	.current_page_item > a,
+// 	.current-menu-item > a,
+// 	.current_page_ancestor > a,
+// 	.current-menu-ancestor > a {
+// 	}
+// }
+
+// /* Small menu. */
+// .menu-toggle,
+// .main-navigation.toggled ul {
+// 	display: block;
+// }
+
+// @media screen and (min-width: 37.5em) {
+
+// 	.menu-toggle {
+// 		display: none;
+// 	}
+
+// 	.main-navigation ul {
+// 		display: flex;
+// 	}
+// }
+
+// .comment-navigation,
+// .posts-navigation,
+// .post-navigation {
+
+// 	.site-main & {
+// 		margin: 0 0 1.5em;
+// 	}
+
+// 	.nav-links {
+// 		display: flex;
+// 	}
+
+// 	.nav-previous {
+// 		flex: 1 0 50%;
+// 	}
+
+// 	.nav-next {
+// 		text-align: end;
+// 		flex: 1 0 50%;
+// 	}
+// }
+
+// Mobile Navigation - Bottom Nav Bar
+
+@media screen and (max-width: 767px) {
+	header {
+
+		.main-navigation{
+			display: none;
+		}
+
+		nav.mobile-navigation {
 
 			ul {
-				left: -999em;
-				top: 0;
-			}
 
-			li {
+				display: flex;
+				justify-content: space-between;
+				width: 100vw;
+				margin: 0;
+				padding: 0.5rem 1rem;
+				background-color: #202020;
+				bottom: 0;
+				position: fixed;
 
-				&:hover > ul,
-				&.focus > ul {
-					display: block;
-					left: auto;
+				li {
+					
+					list-style: none;
+					
+					a {
+
+						display: block;
+						svg {
+							width: 55px;
+							height: 55px;
+							fill: white;
+							align-items: center;
+						}
+
+						#icon-home {
+							padding-top: 4px;
+							height: 56px;
+						}
+		
+						#icon-projects {
+							width: 49px;
+							height: 51px;
+							padding-top: 6px;
+							padding-left: 2px;
+						}
+
+						#icon-about {
+							width: 54px;
+							padding-left: 2px;
+						}
+
+						#icon-contact {
+							padding-bottom: 4px;
+						}
+		
+						p {
+							text-decoration: none;
+							color: white;
+							text-align: center;
+							margin: 0;
+							font-size: 0.8rem;
+						}
+
+						#home-text {
+							padding-right: 2px;
+							padding-top: 2.6px;
+						}
+
+						#projects-text {
+							padding-top: 6.3px;
+						}
+
+						#about-text,
+						#contact-text {
+							padding-top: 3px;
+						}
+					}
 				}
 			}
-
-			a {
-				width: 200px;
-			}
-
-			:hover > a,
-			.focus > a {
-			}
-
-			a:hover,
-			a.focus {
-			}
-		}
-
-		li:hover > ul,
-		li.focus > ul {
-			left: auto;
 		}
 	}
 
-	li {
-		position: relative;
+	footer {
+		margin-bottom: 110px;
+	}
+}
 
-		&:hover > a,
-		&.focus > a {
+@media screen and (min-width: 520px) {
+
+	header {
+		nav.mobile-navigation {
+			ul {
+				padding: 0.5rem 2rem;
+			}
 		}
 	}
+}
 
-	a {
+@media screen and (min-width: 767px){
+	.main-navigation {
 		display: block;
-		text-decoration: none;
 	}
 
-	.current_page_item > a,
-	.current-menu-item > a,
-	.current_page_ancestor > a,
-	.current-menu-ancestor > a {
-	}
-}
-
-/* Small menu. */
-.menu-toggle,
-.main-navigation.toggled ul {
-	display: block;
-}
-
-@media screen and (min-width: 37.5em) {
-
-	.menu-toggle {
+	.mobile-navigation {
 		display: none;
 	}
 
-	.main-navigation ul {
-		display: flex;
-	}
-}
-
-.comment-navigation,
-.posts-navigation,
-.post-navigation {
-
-	.site-main & {
-		margin: 0 0 1.5em;
-	}
-
-	.nav-links {
-		display: flex;
-	}
-
-	.nav-previous {
-		flex: 1 0 50%;
-	}
-
-	.nav-next {
-		text-align: end;
-		flex: 1 0 50%;
+	footer {
+		margin-bottom: 0;
 	}
 }

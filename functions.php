@@ -1,6 +1,6 @@
 <?php
 /**
- * coulson functions and definitions
+ * Coulson functions and definitions
  *
  * @link https://developer.wordpress.org/themes/basics/theme-functions/
  *
@@ -177,4 +177,7 @@ require get_template_directory() . '/inc/customizer.php';
 if ( defined( 'JETPACK__VERSION' ) ) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
+
+/** Requiring file that has custom post type functions */
+require get_template_directory() . '/inc/cpt-taxonomy.php';
 

@@ -620,83 +620,90 @@ textarea {
 --------------------------------------------------------------*/
 /* Navigation
 --------------------------------------------- */
-.main-navigation {
-	display: block;
-	width: 100%;
-}
-.main-navigation ul {
-	display: none;
-	list-style: none;
-	margin: 0;
-	padding-left: 0;
-}
-.main-navigation ul ul {
-	box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
-	float: left;
-	position: absolute;
-	top: 100%;
-	left: -999em;
-	z-index: 99999;
-}
-.main-navigation ul ul ul {
-	left: -999em;
-	top: 0;
-}
-.main-navigation ul ul li:hover > ul, .main-navigation ul ul li.focus > ul {
-	display: block;
-	left: auto;
-}
-.main-navigation ul ul a {
-	width: 200px;
-}
-.main-navigation ul li:hover > ul,
-.main-navigation ul li.focus > ul {
-	left: auto;
-}
-.main-navigation li {
-	position: relative;
-}
-.main-navigation a {
-	display: block;
-	text-decoration: none;
-}
-/* Small menu. */
-.menu-toggle,
-.main-navigation.toggled ul {
-	display: block;
-}
+@media screen and (max-width: 767px) {
+	header .main-navigation {
+		display: none;
+	}
+	header nav.mobile-navigation ul {
+		display: flex;
+		justify-content: space-between;
+		width: 100vw;
+		margin: 0;
+		padding: 0.5rem 1rem;
+		background-color: #202020;
+		bottom: 0;
+		position: fixed;
+	}
+	header nav.mobile-navigation ul li {
+		list-style: none;
+	}
+	header nav.mobile-navigation ul li a {
+		display: block;
+	}
+	header nav.mobile-navigation ul li a svg {
+		width: 55px;
+		height: 55px;
+		fill: white;
+		align-items: center;
+	}
+	header nav.mobile-navigation ul li a #icon-home {
+		padding-top: 4px;
+		height: 56px;
+	}
+	header nav.mobile-navigation ul li a #icon-projects {
+		width: 49px;
+		height: 51px;
+		padding-top: 6px;
+		padding-left: 2px;
+	}
+	header nav.mobile-navigation ul li a #icon-about {
+		width: 54px;
+		padding-left: 2px;
+	}
+	header nav.mobile-navigation ul li a #icon-contact {
+		padding-bottom: 4px;
+	}
+	header nav.mobile-navigation ul li a p {
+		text-decoration: none;
+		color: white;
+		text-align: center;
+		margin: 0;
+		font-size: 0.8rem;
+	}
+	header nav.mobile-navigation ul li a #home-text {
+		padding-right: 2px;
+		padding-top: 2.6px;
+	}
+	header nav.mobile-navigation ul li a #projects-text {
+		padding-top: 6.3px;
+	}
+	header nav.mobile-navigation ul li a #about-text,
+header nav.mobile-navigation ul li a #contact-text {
+		padding-top: 3px;
+	}
 
-@media screen and (min-width: 37.5em) {
-	.menu-toggle {
+	footer {
+		margin-bottom: 110px;
+	}
+}
+@media screen and (min-width: 520px) {
+	header nav.mobile-navigation ul {
+		padding: 0.5rem 2rem;
+	}
+}
+@media screen and (min-width: 767px) {
+	.main-navigation {
+		display: block;
+	}
+
+	.mobile-navigation {
 		display: none;
 	}
 
-	.main-navigation ul {
-		display: flex;
+	footer {
+		margin-bottom: 0;
 	}
 }
-.site-main .comment-navigation,
-.site-main .posts-navigation,
-.site-main .post-navigation {
-	margin: 0 0 1.5em;
-}
-.comment-navigation .nav-links,
-.posts-navigation .nav-links,
-.post-navigation .nav-links {
-	display: flex;
-}
-.comment-navigation .nav-previous,
-.posts-navigation .nav-previous,
-.post-navigation .nav-previous {
-	flex: 1 0 50%;
-}
-.comment-navigation .nav-next,
-.posts-navigation .nav-next,
-.post-navigation .nav-next {
-	text-align: end;
-	flex: 1 0 50%;
-}
-
 /* Posts and pages
 --------------------------------------------- */
 .sticky {
