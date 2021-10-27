@@ -1,123 +1,62 @@
-// .main-navigation {
-// 	display: block;
-// 	width: 100%;
+footer {
+	background-color: $color__text_main;
+	bottom: 0;
 
-// 	ul {
-// 		display: none;
-// 		list-style: none;
-// 		margin: 0;
-// 		padding-left: 0;
+	.footer-nav {
 
-// 		ul {
-// 			box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
-// 			float: left;
-// 			position: absolute;
-// 			top: 100%;
-// 			left: -999em;
-// 			z-index: 99999;
+		ul {
+			list-style: none;
+			display: flex;
+			width: 40%;
+			max-width: 150px;
+			margin:0 auto;
+			padding: 0;
+			padding-top: 10px;
 
-// 			ul {
-// 				left: -999em;
-// 				top: 0;
-// 			}
+			li {
+				margin:0 auto;
 
-// 			li {
+				svg {
+					width: 40px;
+					height: 40px;
+				}
+			}
+		}
 
-// 				&:hover > ul,
-// 				&.focus > ul {
-// 					display: block;
-// 					left: auto;
-// 				}
-// 			}
+		p {
+			color: #fff;
+			text-align: center;
+			font-size: 0.9em;
+			padding-bottom: 10px;
+			margin-bottom: 0;
+		}
+	}
+}
 
-// 			a {
-// 				width: 200px;
-// 			}
+// Clear footer styles for WP Admin edit button.
+.entry-footer {
+	background-color: transparent;
+}
 
-// 			:hover > a,
-// 			.focus > a {
-// 			}
-
-// 			a:hover,
-// 			a.focus {
-// 			}
-// 		}
-
-// 		li:hover > ul,
-// 		li.focus > ul {
-// 			left: auto;
-// 		}
-// 	}
-
-// 	li {
-// 		position: relative;
-
-// 		&:hover > a,
-// 		&.focus > a {
-// 		}
-// 	}
-
-// 	a {
-// 		display: block;
-// 		text-decoration: none;
-// 	}
-
-// 	.current_page_item > a,
-// 	.current-menu-item > a,
-// 	.current_page_ancestor > a,
-// 	.current-menu-ancestor > a {
-// 	}
-// }
-
-// /* Small menu. */
-// .menu-toggle,
-// .main-navigation.toggled ul {
-// 	display: block;
-// }
-
-// @media screen and (min-width: 37.5em) {
-
-// 	.menu-toggle {
-// 		display: none;
-// 	}
-
-// 	.main-navigation ul {
-// 		display: flex;
-// 	}
-// }
-
-// .comment-navigation,
-// .posts-navigation,
-// .post-navigation {
-
-// 	.site-main & {
-// 		margin: 0 0 1.5em;
-// 	}
-
-// 	.nav-links {
-// 		display: flex;
-// 	}
-
-// 	.nav-previous {
-// 		flex: 1 0 50%;
-// 	}
-
-// 	.nav-next {
-// 		text-align: end;
-// 		flex: 1 0 50%;
-// 	}
-// }
 
 // Mobile Navigation - Bottom Nav Bar
 
 @media screen and (max-width: 767px) {
 	header {
 
+		.site-branding {
+			width: 80vw;
+			min-width: 18rem;
+			margin: 1rem auto;
+		}
+
 		.main-navigation{
 			display: none;
 		}
 
 		nav.mobile-navigation {
+
+			z-index: 9999;
 
 			ul {
 
@@ -126,22 +65,26 @@
 				width: 100vw;
 				margin: 0;
 				padding: 0.5rem 1rem;
-				background-color: #202020;
+				background-color: $color__text_main;
 				bottom: 0;
 				position: fixed;
+				z-index: 9999;
 
 				li {
 					
 					list-style: none;
 					
 					a {
-
 						display: block;
+						padding: 0.5em 2em;
+						margin: -0.5em -2em;
+
 						svg {
 							width: 55px;
 							height: 55px;
 							fill: white;
 							align-items: center;
+							z-index: 9999;
 						}
 
 						#icon-home {
@@ -193,7 +136,7 @@
 	}
 
 	footer {
-		margin-bottom: 110px;
+		margin-bottom: 6.3125rem;
 	}
 }
 
@@ -219,5 +162,102 @@
 
 	footer {
 		margin-bottom: 0;
+	}
+}
+
+@media screen and (min-width: 768px) {
+
+	header{
+		
+		display: flex;
+		margin-top: 1rem;
+
+		.site-branding {
+			width: 80vw;
+			max-width: 500px;
+			margin-left: 1.5rem;
+			margin-top: 0.5rem;
+		}
+
+		.main-navigation {
+			display: block;
+			width: 100%;
+		
+			ul {
+				list-style: none;
+				margin-left: auto;
+				margin-right: 3.5rem;
+				padding-left: 0;
+				display: flex;
+				padding-top: 1.9rem;
+				justify-content: space-between;
+				width: 45vw;
+		
+				li:hover > ul,
+				li.focus > ul {
+					left: auto;
+				}
+			}
+		
+			li {
+				position: relative;
+				font-size: 2em;
+				transition: 0.5s ease-in-out;
+
+				&:hover {
+					transform: scale(1.1);
+				}
+			}
+
+			li:after {
+				content: '';
+				display: block;
+				margin: auto;
+				height: 3px;
+				width: 0px;
+				background: transparent;
+				transition: width .5s ease, background-color .5s ease;
+			}
+
+			li:hover:after {
+				width: 100%;
+				background: $color__brand_color_1;
+			}
+			  
+		
+			a {
+				display: inline-block;
+				vertical-align: middle;
+				text-decoration: none;
+				color: $color__brand_color_3;
+				font-weight: 500;
+			}
+	
+		}
+	}
+}
+
+@media screen and (min-width: 768px) and (max-width: 1200px) {
+	header {
+		display: flex;
+		flex-direction: column;
+
+		.site-branding {
+			width: 60vw;
+			margin: 0 auto;
+		}
+
+		.main-navigation {
+
+			ul {
+
+				width: 100%;
+				padding: 0 4rem;
+
+				li {
+					font-size: 1.7em;
+				}
+			}
+		}
 	}
 }

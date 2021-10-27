@@ -50,7 +50,8 @@ if ( ! function_exists( 'coulson_setup' ) ) :
 		// This theme uses wp_nav_menu() in one location.
 		register_nav_menus(
 			array(
-				'menu-1' => esc_html__( 'Primary', 'coulson' ),
+				'menu-1'    => esc_html__( 'Primary', 'coulson' ),
+				'secondary' => esc_html__( 'Footer Menu', 'coulson' ),
 			)
 		);
 
@@ -140,6 +141,13 @@ add_action( 'widgets_init', 'coulson_widgets_init' );
  * Enqueue scripts and styles.
  */
 function coulson_scripts() {
+	wp_enqueue_style(
+		'coulson-googlefonts',
+		'https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap',
+		array(),
+		null
+	);
+
 	wp_enqueue_style( 'coulson-style', get_stylesheet_uri(), array(), _S_VERSION );
 	wp_style_add_data( 'coulson-style', 'rtl', 'replace' );
 
