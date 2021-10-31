@@ -28,7 +28,9 @@
 		$featured_img = get_field( 'project_featured_image' );
 		if ( ! empty( $featured_img ) ) :
 			?>
-				<img src="<?php echo esc_url( $featured_img['url'] ); ?>" alt="<?php echo esc_attr( $featured_img['alt'] ); ?>" />
+				<a href=" <?php echo esc_url( get_permalink() ); ?> ">
+					<img src="<?php echo esc_url( $featured_img['url'] ); ?>" alt="<?php echo esc_attr( $featured_img['alt'] ); ?>" />
+				</a>
 				<?php
 			endif;
 
@@ -38,6 +40,6 @@
 				<?php
 		endif;
 		?>
-		<button><a href=" <?php esc_url( get_permalink() ) ?> ">See More</a></button>
+		<button><a href=" <?php echo esc_url( get_permalink() ); ?> ">See More</a></button>
 	</div><!-- .entry-content -->
 </article><!-- #post-<?php the_ID(); ?> -->

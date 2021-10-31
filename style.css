@@ -849,6 +849,35 @@ header .main-navigation ul li.focus > ul {
 	margin: 0 0 1.5em;
 }
 
+.single-coulson-projects .site button.accordion-tab {
+	width: 100%;
+	background-color: #282828;
+	color: white;
+	border: none;
+	outline: none;
+	padding: 1rem 1.1rem;
+	font-size: 1.125rem;
+	cursor: pointer;
+	transition: background-color 0.2s linear;
+}
+.single-coulson-projects .site button.accordion-tab:hover {
+	background-color: #4a4949;
+}
+.single-coulson-projects .site button.accordion-tab:after {
+	content: "\f055";
+	font-family: "FontAwesome";
+	font-size: 14px;
+	font-weight: 500;
+}
+.single-coulson-projects .site button.is-open:after {
+	content: "\f056";
+}
+.single-coulson-projects .site .accordion-content {
+	max-height: 0;
+	overflow: hidden;
+	transition: max-height 0.3s ease-in-out;
+}
+
 /* Comments
 --------------------------------------------- */
 .comment-content a {

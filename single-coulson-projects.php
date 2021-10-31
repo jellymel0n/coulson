@@ -18,7 +18,7 @@ get_header();
 
 			$featured_img = get_field( 'project_featured_image' );
 			if ( ! empty( $featured_img ) ) :
-			?>
+				?>
 				<img src="<?php echo esc_url( $featured_img['url'] ); ?>" alt="<?php echo esc_attr( $featured_img['alt'] ); ?>" />
 				<?php
 			endif;
@@ -40,74 +40,82 @@ get_header();
 				?>
 			</div>
 
-			<h2>Planning</h2>
-			<?php
-			$planning = get_field( 'planning_group' );
-			if ( $planning ) :
+			<button class='accordion-tab'>Planning</button>
+			<div class="accordion-content">
+				<?php
+				$planning = get_field( 'planning_group' );
+				if ( $planning ) :
+					?>
+					<section id='planning'>
+						<p id="planning-intro"> <?php echo esc_html( $planning['planning_text'] ); ?> </p>
+
+						<img src="<?php echo esc_url( $planning['planning_image']['url'] ); ?>" alt="<?php echo esc_attr( $planning['planning_image']['alt'] ); ?>" />
+
+						<div id="planning-outro"><?php echo acf_esc_html( $planning['planning_list'] ); ?></div>
+					</section>
+					<?php
+				endif;
 				?>
-				<section id='planning'>
-					<p id="planning-intro"> <?php echo esc_html( $planning['planning_text'] ); ?> </p>
+			</div>
 
-					<img src="<?php echo esc_url( $planning['planning_image']['url'] ); ?>" alt="<?php echo esc_attr( $planning['planning_image']['alt'] ); ?>" />
-
-					<div id="planning-outro"><?php echo acf_esc_html( $planning['planning_list'] ); ?></div>
-				</section>
+			<button class='accordion-tab'>Design</button>
+			<div class="accordion-content">
 				<?php
-			endif;
-			?>
+				$design = get_field( 'design_group' );
+				if ( $design ) :
+					?>
+					<section id="design">
+						<img src="<?php echo esc_url( $design['design_image']['url'] ); ?>" alt="<?php echo esc_attr( $design['design_image']['alt'] ); ?>" />
 
-			<h2>Design</h2>
-			<?php 
-			$design = get_field( 'design_group' );
-			if ( $design ) :
-			?>
-				<section id="design">
-					<img src="<?php echo esc_url( $design['design_image']['url'] ); ?>" alt="<?php echo esc_attr( $design['design_image']['alt'] ); ?>" />
+						<p id='design-intro'><?php echo esc_html( $design['design_text'] ); ?></p>
 
-					<p id='design-intro'><?php echo esc_html( $design['design_text'] ); ?></p>
+						<img src="<?php echo esc_url( $design['design_image_2']['url'] ); ?>" alt="<?php echo esc_attr( $design['design_image_2']['alt'] ); ?>" />
+					</section>
+					<?php
+				endif;
+				?>
+			</div>
 
-					<img src="<?php echo esc_url( $design['design_image_2']['url'] ); ?>" alt="<?php echo esc_attr( $design['design_image_2']['alt'] ); ?>" />
-				</section>
+			<button class='accordion-tab'>Development</button>
+			<div class="accordion-content">
 				<?php
-			endif;
-			?>
+				$development = get_field( 'development_group' );
+				if ( $development ) :
+					?>
+					<section id="development">
+						<p id='development-intro'><?php echo esc_html( $development['development_text'] ); ?></p>
 
-			<h2>Development</h2>
-			<?php 
-			$development = get_field( 'development_group' );
-			if ( $development ) :
-			?>
-				<section id="development">
-					<p id='development-intro'><?php echo esc_html( $development['development_text'] ); ?></p>
+						<div>
+							<?php echo acf_esc_html( $development['development_embed'] ); ?>
+						</div>
+					</section>
+					<?php
+				endif;
+				?>
+			</div>
 
-					<div>
-						<?php echo acf_esc_html( $development['development_embed'] ); ?>
-					</div>
-				</section>
+			<button class='accordion-tab'>Reflections</button>
+			<div class="accordion-content">
 				<?php
-			endif;
-			?>
+				$reflections = get_field( 'reflections_group' );
+				if ( $reflections ) :
+					?>
+					<section id="reflections">
+						<p id='reflections-intro'><?php echo esc_html( $reflections['reflections_text'] ); ?></p>
 
-			<h2>Reflections</h2>
-			<?php
-			$reflections = get_field( 'reflections_group' );
-			if ( $reflections ) :
-			?>
-				<section id="reflections">
-					<p id='reflections-intro'><?php echo esc_html( $reflections['reflections_text'] ); ?></p>
-
-					<img src="<?php echo esc_url( $reflections['reflections_image']['url'] ); ?>" alt="<?php echo esc_attr( $reflections['reflections_image']['alt'] ); ?>" />
-				</section>
-				<?php
-			endif;
-			?>
+						<img src="<?php echo esc_url( $reflections['reflections_image']['url'] ); ?>" alt="<?php echo esc_attr( $reflections['reflections_image']['alt'] ); ?>" />
+					</section>
+					<?php
+				endif;
+				?>
+			</div>
 
 			<h2 id='view-more'>View More Projects</h2>
 				<?php
-				$args = array( 
-					'post_type' => 'coulson-projects', 
+				$args            = array(
+					'post_type'      => 'coulson-projects',
 					'posts_per_page' => 2,
-					'orderby' => 'rand',
+					'orderby'        => 'rand',
 				);
 				$current_project = get_the_ID();
 
@@ -131,7 +139,7 @@ get_header();
 						?>
 
 						<button><a href="<?php echo esc_url( get_permalink() ); ?>">View Project</a></button>
-				<?php 
+						<?php
 					endif;
 				endwhile;
 

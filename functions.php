@@ -153,6 +153,8 @@ function coulson_scripts() {
 
 	wp_enqueue_script( 'coulson-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true );
 
+	wp_enqueue_script( 'coulson-accordion', get_template_directory_uri() . '/js/accordion.js', array(), _S_VERSION, true );
+
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
