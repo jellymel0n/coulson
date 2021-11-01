@@ -24,20 +24,64 @@ get_header();
 			endif;
 			?>
 
-			<div id="intro-info"> 
-				<?php
-				if ( get_field( 'project_title' ) ) :
-					?>
-					<h1 class='project-title'> <?php the_field( 'project_title' ); ?> </h1>
+			<?php	
+			if ( get_field( 'project_title' ) ) :
+				?>
+				<h1 class='project-title'> <?php the_field( 'project_title' ); ?> </h1>
+					<?php
+				endif;
+				?>
+
+			<div id="links">		
+				<div id="live-site-link">
+					<?php
+					$live_site_link = get_field('live_site_link');
+					if ( $live_site_link ) :
+						?>
+						<a href="<?php echo esc_url( $live_site_link['url'] ) ?>" target='_blank'>Live Site</a>
 						<?php
 					endif;
+					?>
+				</div>
 
+				<div id="github-link">
+					<?php
+					$github_link = get_field('github_link');
+					if ( $github_link ) :
+						?>
+						<a href="<?php echo esc_url( $github_link['url'] ) ?>" target='_blank'>Github Repo</a>
+						<?php
+					endif;
+					?>
+				</div>
+			</div>
+
+			<div id="intro-info"> 
+				<?php 
 				if ( get_field( 'project_description' ) ) :
 					?>
 						<p><?php the_field( 'project_description' ); ?></p>
 						<?php
 					endif;
 				?>
+			</div>
+
+			<div id="technology-used">
+				<h2>Technology Used</h2>
+				<?php
+				$technology = get_field( 'technology_used' ); 
+				?>
+				<ul>
+				<?php
+				foreach ( $technology as $single_tech ) :
+					?>
+					<li> 
+						<?php get_template_part( '/assets/icons/tech-icons-php/inline', $single_tech ); ?>
+					</li>
+					<?php
+				endforeach;
+				?>
+				</ul>
 			</div>
 
 			<button class='accordion-tab'>Planning</button>
@@ -47,9 +91,12 @@ get_header();
 				if ( $planning ) :
 					?>
 					<section id='planning'>
-						<p id="planning-intro"> <?php echo esc_html( $planning['planning_text'] ); ?> </p>
+						<p id="planning-intro"> <?php echo acf_esc_html( $planning['planning_text'] ); ?> </p>
 
-						<img src="<?php echo esc_url( $planning['planning_image']['url'] ); ?>" alt="<?php echo esc_attr( $planning['planning_image']['alt'] ); ?>" />
+						<figure>
+							<img src="<?php echo esc_url( $planning['planning_image']['url'] ); ?>" alt="<?php echo esc_attr( $planning['planning_image']['alt'] ); ?>" />
+							<figcaption><?php echo esc_html( $planning['planning_image']['caption'] ); ?></figcaption>
+						</figure>
 
 						<div id="planning-outro"><?php echo acf_esc_html( $planning['planning_list'] ); ?></div>
 					</section>
@@ -65,11 +112,13 @@ get_header();
 				if ( $design ) :
 					?>
 					<section id="design">
-						<img src="<?php echo esc_url( $design['design_image']['url'] ); ?>" alt="<?php echo esc_attr( $design['design_image']['alt'] ); ?>" />
+						<img id="design-img" src="<?php echo esc_url( $design['design_image']['url'] ); ?>" alt="<?php echo esc_attr( $design['design_image']['alt'] ); ?>" />
 
-						<p id='design-intro'><?php echo esc_html( $design['design_text'] ); ?></p>
+						<p id='design-intro'><?php echo acf_esc_html( $design['design_text'] ); ?></p>
 
-						<img src="<?php echo esc_url( $design['design_image_2']['url'] ); ?>" alt="<?php echo esc_attr( $design['design_image_2']['alt'] ); ?>" />
+						<?php if ( $design['design_img_2'] ) : ?>
+							<img src="<?php echo esc_url( $design['design_image_2']['url'] ); ?>" alt="<?php echo esc_attr( $design['design_image_2']['alt'] ); ?>" />
+						<?php endif; ?>
 					</section>
 					<?php
 				endif;
@@ -83,7 +132,7 @@ get_header();
 				if ( $development ) :
 					?>
 					<section id="development">
-						<p id='development-intro'><?php echo esc_html( $development['development_text'] ); ?></p>
+						<p id='development-intro'><?php echo acf_esc_html( $development['development_text'] ); ?></p>
 
 						<div>
 							<?php echo acf_esc_html( $development['development_embed'] ); ?>
@@ -101,7 +150,7 @@ get_header();
 				if ( $reflections ) :
 					?>
 					<section id="reflections">
-						<p id='reflections-intro'><?php echo esc_html( $reflections['reflections_text'] ); ?></p>
+						<p id='reflections-intro'><?php echo acf_esc_html( $reflections['reflections_text'] ); ?></p>
 
 						<img src="<?php echo esc_url( $reflections['reflections_image']['url'] ); ?>" alt="<?php echo esc_attr( $reflections['reflections_image']['alt'] ); ?>" />
 					</section>
@@ -121,28 +170,34 @@ get_header();
 
 				$query = new WP_Query( $args );
 				while ( $query->have_posts() ) :
-					$query->the_post();
-					if ( get_the_ID() !== $current_project ) :
-						$more_title = get_field( 'project_title' );
-						if ( $more_title ) :
-							?>
-							<h3 class='more-project-title'><?php echo esc_html( $more_title ); ?></h3> 
-							<?php
-						endif;
+					?>
+					<div id='view-more-container'>
+						<?php
+						$query->the_post();
+						if ( get_the_ID() !== $current_project ) :
+							$more_title = get_field( 'project_title' );
+							if ( $more_title ) :
+								?>
+								<h3 class='more-project-title'><?php echo esc_html( $more_title ); ?></h3> 
+								<?php
+							endif;
 
-						$more_image = get_field( 'project_featured_image' );
-						if ( ! empty( $more_image ) ) :
+							$more_image = get_field( 'project_featured_image' );
+							if ( ! empty( $more_image ) ) :
+								?>
+								<img src="<?php echo esc_url( $featured_img['url'] ); ?>" alt="<?php echo esc_attr( $featured_img['alt'] ); ?>" />
+								<?php
+							endif;
 							?>
-							<img src="<?php echo esc_url( $featured_img['url'] ); ?>" alt="<?php echo esc_attr( $featured_img['alt'] ); ?>" />
+
+							<button><a href="<?php echo esc_url( get_permalink() ); ?>">View Project</a></button>
 							<?php
 						endif;
 						?>
-
-						<button><a href="<?php echo esc_url( get_permalink() ); ?>">View Project</a></button>
-						<?php
-					endif;
+					</div>
+					<?php
 				endwhile;
-
+				
 
 		endwhile; // End of the loop.
 		?>
