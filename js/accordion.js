@@ -15,8 +15,3 @@ for (let i = 0; i < accordions.length; i++) {
     }
 }
 
-// Fixing Codepen embed to only display javascript
-var jsCodePen = document.getElementById('js-link');
-var resultsCodePen = document.getElementById('result-link');
-resultsCodePen.classList.remove('active');
-jsCodePen.classList.add('active');

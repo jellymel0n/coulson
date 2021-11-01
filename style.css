@@ -680,7 +680,7 @@ footer .footer-nav p {
 	}
 	header nav.mobile-navigation ul li a {
 		display: block;
-		padding: 0.5em 2em;
+		padding: 0.5em 1.6em;
 		margin: -0.5em -2em;
 	}
 	header nav.mobile-navigation ul li a svg {
@@ -898,7 +898,8 @@ header .main-navigation ul li.focus > ul {
 	margin-right: 5px;
 	color: #fff;
 }
-.single-coulson-projects .site #technology-used {
+.single-coulson-projects .site #technology-used,
+.single-coulson-projects .site #other-technology {
 	border: 2px solid #282828;
 	border-radius: 8px;
 	margin: 0 1rem;
@@ -906,13 +907,15 @@ header .main-navigation ul li.focus > ul {
 	background-color: #282828;
 	box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
 }
-.single-coulson-projects .site #technology-used h2 {
+.single-coulson-projects .site #technology-used h2,
+.single-coulson-projects .site #other-technology h2 {
 	text-align: center;
 	font-size: 1.2rem;
 	color: #fff;
 	letter-spacing: 1px;
 }
-.single-coulson-projects .site #technology-used ul {
+.single-coulson-projects .site #technology-used ul,
+.single-coulson-projects .site #other-technology ul {
 	list-style: none;
 	display: flex;
 	flex-wrap: wrap;
@@ -920,10 +923,12 @@ header .main-navigation ul li.focus > ul {
 	padding: 0;
 	justify-content: space-evenly;
 }
-.single-coulson-projects .site #technology-used ul svg {
+.single-coulson-projects .site #technology-used ul svg,
+.single-coulson-projects .site #other-technology ul svg {
 	fill: #fff;
-	width: 90px;
-	height: 90px;
+	width: 70px;
+	height: 70px;
+	margin: 0 0.4rem;
 }
 .single-coulson-projects .site button.accordion-tab {
 	width: 100%;
@@ -941,9 +946,6 @@ header .main-navigation ul li.focus > ul {
 	display: flex;
 	justify-content: space-between;
 }
-.single-coulson-projects .site button.accordion-tab:hover {
-	background-color: #3a3939;
-}
 .single-coulson-projects .site button.accordion-tab:after {
 	content: "\f055";
 	font-family: "FontAwesome";
@@ -955,7 +957,7 @@ header .main-navigation ul li.focus > ul {
 	border-bottom: none;
 }
 .single-coulson-projects .site button.is-open {
-	background-color: #4a4949;
+	background-color: #313d4f;
 }
 .single-coulson-projects .site button.is-open:after {
 	content: "\f056";
@@ -1008,7 +1010,7 @@ header .main-navigation ul li.focus > ul {
 	color: #282828;
 	margin-left: 0.5rem;
 }
-.single-coulson-projects .site #view-more-container {
+.single-coulson-projects .site #view-more-section #view-more-container {
 	margin: 2rem 1.2rem;
 	position: relative;
 	border: 3px solid #282828;
@@ -1016,7 +1018,7 @@ header .main-navigation ul li.focus > ul {
 	line-height: 0;
 	box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
-.single-coulson-projects .site #view-more-container h3 {
+.single-coulson-projects .site #view-more-section #view-more-container h3 {
 	text-align: center;
 	color: #fff;
 	background-color: #282828;
@@ -1025,10 +1027,10 @@ header .main-navigation ul li.focus > ul {
 	letter-spacing: 1px;
 	font-weight: 500;
 }
-.single-coulson-projects .site #view-more-container img {
+.single-coulson-projects .site #view-more-section #view-more-container img {
 	margin: 0;
 }
-.single-coulson-projects .site #view-more-container button {
+.single-coulson-projects .site #view-more-section #view-more-container button {
 	background-color: #282828;
 	width: 100%;
 	margin: 0;
@@ -1036,7 +1038,7 @@ header .main-navigation ul li.focus > ul {
 	border: none;
 	border-radius: 0;
 }
-.single-coulson-projects .site #view-more-container button a {
+.single-coulson-projects .site #view-more-section #view-more-container button a {
 	text-decoration: none;
 	color: #fff;
 	font-size: 1.2rem;

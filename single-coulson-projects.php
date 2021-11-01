@@ -49,7 +49,7 @@ get_header();
 					$github_link = get_field('github_link');
 					if ( $github_link ) :
 						?>
-						<a href="<?php echo esc_url( $github_link['url'] ) ?>" target='_blank'>Github Repo</a>
+						<a href="<?php echo esc_url( $github_link['url'] ) ?>" target='_blank'>GitHub</a>
 						<?php
 					endif;
 					?>
@@ -67,7 +67,7 @@ get_header();
 			</div>
 
 			<div id="technology-used">
-				<h2>Technology Used</h2>
+				<h2>Development Tools</h2>
 				<?php
 				$technology = get_field( 'technology_used' ); 
 				?>
@@ -77,6 +77,24 @@ get_header();
 					?>
 					<li> 
 						<?php get_template_part( '/assets/icons/tech-icons-php/inline', $single_tech ); ?>
+					</li>
+					<?php
+				endforeach;
+				?>
+				</ul>
+			</div>
+
+			<div id="other-technology">
+				<h2>Other Tools</h2>
+				<?php
+				$other_technology = get_field( 'other_technology' ); 
+				?>
+				<ul>
+				<?php
+				foreach ( $other_technology as $single_other_tech ) :
+					?>
+					<li> 
+						<?php get_template_part( '/assets/icons/tech-icons-php/inline', $single_other_tech ); ?>
 					</li>
 					<?php
 				endforeach;
@@ -160,6 +178,7 @@ get_header();
 			</div>
 
 			<h2 id='view-more'>View More Projects</h2>
+			<div id='view-more-section'>
 				<?php
 				$args            = array(
 					'post_type'      => 'coulson-projects',
@@ -197,8 +216,9 @@ get_header();
 					</div>
 					<?php
 				endwhile;
-				
-
+			?>
+			</div>
+			<?php
 		endwhile; // End of the loop.
 		?>
 
