@@ -20,6 +20,14 @@ footer {
 					width: 40px;
 					height: 40px;
 				}
+
+				a { 
+					text-decoration: none;
+		
+					&:visited {
+						text-decoration: none;
+					}
+				}
 			}
 		}
 
@@ -30,6 +38,8 @@ footer {
 			padding-bottom: 10px;
 			margin-bottom: 0;
 		}
+
+		
 	}
 }
 
@@ -78,6 +88,7 @@ footer {
 						display: block;
 						padding: 0.5em 1.6em;
 						margin: -0.5em -2em;
+						text-decoration: none;
 						
 
 						svg {

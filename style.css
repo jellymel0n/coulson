@@ -640,6 +640,12 @@ footer .footer-nav ul li svg {
 	width: 40px;
 	height: 40px;
 }
+footer .footer-nav ul li a {
+	text-decoration: none;
+}
+footer .footer-nav ul li a:visited {
+	text-decoration: none;
+}
 footer .footer-nav p {
 	color: #fff;
 	text-align: center;
@@ -682,6 +688,7 @@ footer .footer-nav p {
 		display: block;
 		padding: 0.5em 1.6em;
 		margin: -0.5em -2em;
+		text-decoration: none;
 	}
 	header nav.mobile-navigation ul li a svg {
 		width: 55px;
@@ -1048,6 +1055,138 @@ header .main-navigation ul li.focus > ul {
 	z-index: 1;
 	padding: 2em;
 	margin: -2em;
+}
+
+.archive .site .site-main {
+	padding: 0 1rem;
+}
+.archive .site .site-main #projects-banner {
+	border: 3px solid #282828;
+	border-radius: 8px;
+	padding: 4rem 4rem;
+	margin: 1.5rem 0.5rem;
+}
+.archive .site .site-main #projects-banner h2 {
+	text-align: center;
+	font-size: 1.7em;
+}
+.archive .site .site-main .button-group {
+	margin: 2.5rem auto;
+	display: flex;
+	flex-wrap: wrap;
+	text-align: center;
+	justify-content: center;
+}
+.archive .site .site-main .button-group button {
+	color: #fff;
+	border: 3px solid #282828;
+	background-color: #282828;
+	border-radius: 25px;
+	width: 9rem;
+	padding: 1rem 0;
+	margin: 0.5rem;
+	font-weight: 500;
+}
+.archive .site .site-main .button-group button.active {
+	color: #282828;
+	background-color: #ff7069;
+}
+.archive .site .site-main .archive-project-container {
+	border: 3px solid #282828;
+	margin-bottom: 0.4rem;
+	border-radius: 8px;
+}
+.archive .site .site-main .archive-project-container .entry-header h3 {
+	text-align: center;
+	width: 100%;
+	font-size: 1.3em;
+	background-color: #282828;
+	margin: 0;
+	padding: 0.8rem 0;
+}
+.archive .site .site-main .archive-project-container .entry-header h3 a {
+	text-decoration: none;
+	color: #fff;
+	text-align: center;
+}
+.archive .site .site-main .archive-project-container .entry-header div#technology-header {
+	border: 2px solid #282828;
+	background-color: #282828;
+	padding-bottom: 0.5rem;
+}
+.archive .site .site-main .archive-project-container .entry-header div#technology-header ul {
+	list-style: none;
+	display: flex;
+	flex-wrap: wrap;
+	margin: 0;
+	padding: 0;
+	justify-content: space-evenly;
+}
+.archive .site .site-main .archive-project-container .entry-header div#technology-header ul svg {
+	fill: #fff;
+	width: 30px;
+	height: 30px;
+	margin: 0 0.4rem;
+}
+.archive .site .site-main .archive-project-container .entry-content {
+	margin-top: 0;
+}
+.archive .site .site-main .archive-project-container .entry-content a {
+	display: block;
+}
+.archive .site .site-main .archive-project-container .entry-content a img {
+	display: block;
+}
+.archive .site .site-main .archive-project-container .entry-content p {
+	background-color: #282828;
+	margin: 0;
+	color: #fff;
+	padding: 1.3rem 0.8rem;
+	text-align: center;
+}
+.archive .site .site-main .see-more-btn-container #see-more-btn {
+	display: inline-block;
+	text-align: left;
+	text-decoration: none;
+	color: #fff;
+	font-size: 1.1em;
+	background-color: #282828;
+	padding: 0.6rem 1rem;
+	border-radius: 25px;
+	margin-bottom: 3rem;
+}
+.archive .site .site-main .see-more-btn-container:nth-of-type(even) {
+	display: block;
+	text-align: right;
+}
+
+.page-id-96 .site #tech-used {
+	border: 2px solid #282828;
+	border-radius: 8px;
+	margin: 0 1rem;
+	margin-bottom: 2.2rem;
+	background-color: #282828;
+	box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+}
+.page-id-96 .site #tech-used h2 {
+	text-align: center;
+	font-size: 1.2rem;
+	color: #fff;
+	letter-spacing: 1px;
+}
+.page-id-96 .site #tech-used ul {
+	list-style: none;
+	display: flex;
+	flex-wrap: wrap;
+	margin: 0;
+	padding: 0;
+	justify-content: space-evenly;
+}
+.page-id-96 .site #tech-used ul svg {
+	fill: #fff;
+	width: 70px;
+	height: 70px;
+	margin: 0 0.4rem;
 }
 
 /* Comments

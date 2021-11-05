@@ -184,6 +184,9 @@ get_header();
 					'post_type'      => 'coulson-projects',
 					'posts_per_page' => 2,
 					'orderby'        => 'rand',
+					'post__not_in'   => array(
+						get_the_ID(),
+					)
 				);
 				$current_project = get_the_ID();
 
@@ -193,29 +196,28 @@ get_header();
 					<div id='view-more-container'>
 						<?php
 						$query->the_post();
-						if ( get_the_ID() !== $current_project ) :
-							$more_title = get_field( 'project_title' );
-							if ( $more_title ) :
-								?>
-								<h3 class='more-project-title'><?php echo esc_html( $more_title ); ?></h3> 
-								<?php
-							endif;
-
-							$more_image = get_field( 'project_featured_image' );
-							if ( ! empty( $more_image ) ) :
-								?>
-								<img src="<?php echo esc_url( $featured_img['url'] ); ?>" alt="<?php echo esc_attr( $featured_img['alt'] ); ?>" />
-								<?php
-							endif;
+						$more_title = get_field( 'project_title' );
+						if ( $more_title ) :
 							?>
-
-							<button><a href="<?php echo esc_url( get_permalink() ); ?>">View Project</a></button>
+							<h3 class='more-project-title'><?php echo esc_html( $more_title ); ?></h3> 
 							<?php
 						endif;
+
+						$more_image = get_field( 'project_featured_image' );
+						if ( ! empty( $more_image ) ) :
+							?>
+							<img src="<?php echo esc_url( $more_image['url'] ); ?>" alt="<?php echo esc_attr( $more_image['alt'] ); ?>" />
+							<?php
+						endif;
+						?>
+
+						<button><a href="<?php echo esc_url( get_permalink() ); ?>">View Project</a></button>
+						<?php
 						?>
 					</div>
 					<?php
 				endwhile;
+				wp_reset_postdata();
 			?>
 			</div>
 			<?php
