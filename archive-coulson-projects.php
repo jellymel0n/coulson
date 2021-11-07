@@ -16,6 +16,27 @@ get_header();
 
 			<div id="projects-banner">
 				<h2>Projects</h2>
+				<div id="banner-tech-icons">
+					<?php
+					$about_page = 18;
+					$tech_items = get_field( 'project_tech_banner_icons', $about_page );
+					if ( $tech_items ) :
+						?>
+						<ul>
+						<?php
+						foreach ( $tech_items as $single_item ) :
+							?>
+							<li> 
+								<?php get_template_part( '/assets/icons/tech-icons-php/inline', $single_item ); ?>
+							</li>
+							<?php
+						endforeach;
+						?>
+						</ul>
+						<?php
+					endif;
+					?>
+				</div>
 			</div>
 
 			<div class="button-group filter-button-group">

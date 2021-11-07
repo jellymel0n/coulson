@@ -19,7 +19,7 @@ get_header();
 			$featured_img = get_field( 'project_featured_image' );
 			if ( ! empty( $featured_img ) ) :
 				?>
-				<img src="<?php echo esc_url( $featured_img['url'] ); ?>" alt="<?php echo esc_attr( $featured_img['alt'] ); ?>" />
+				<img src="<?php echo esc_url( $featured_img['url'] ); ?>" alt="<?php echo esc_attr( $featured_img['alt'] ); ?>" id='single-img' />
 				<?php
 			endif;
 			?>
@@ -29,8 +29,8 @@ get_header();
 				?>
 				<h1 class='project-title'> <?php the_field( 'project_title' ); ?> </h1>
 					<?php
-				endif;
-				?>
+			endif;
+			?>
 
 			<div id="links">		
 				<div id="live-site-link">
@@ -66,40 +66,42 @@ get_header();
 				?>
 			</div>
 
-			<div id="technology-used">
-				<h2>Development Tools</h2>
-				<?php
-				$technology = get_field( 'technology_used' ); 
-				?>
-				<ul>
-				<?php
-				foreach ( $technology as $single_tech ) :
-					?>
-					<li> 
-						<?php get_template_part( '/assets/icons/tech-icons-php/inline', $single_tech ); ?>
-					</li>
+			<div id="tech-container">
+				<div id="technology-used">
+					<h2>Development Tools</h2>
 					<?php
-				endforeach;
-				?>
-				</ul>
-			</div>
+					$technology = get_field( 'technology_used' ); 
+					?>
+					<ul>
+					<?php
+					foreach ( $technology as $single_tech ) :
+						?>
+						<li> 
+							<?php get_template_part( '/assets/icons/tech-icons-php/inline', $single_tech ); ?>
+						</li>
+						<?php
+					endforeach;
+					?>
+					</ul>
+				</div>
 
-			<div id="other-technology">
-				<h2>Other Tools</h2>
-				<?php
-				$other_technology = get_field( 'other_technology' ); 
-				?>
-				<ul>
-				<?php
-				foreach ( $other_technology as $single_other_tech ) :
-					?>
-					<li> 
-						<?php get_template_part( '/assets/icons/tech-icons-php/inline', $single_other_tech ); ?>
-					</li>
+				<div id="other-technology">
+					<h2>Other Tools</h2>
 					<?php
-				endforeach;
-				?>
-				</ul>
+					$other_technology = get_field( 'other_technology' ); 
+					?>
+					<ul>
+					<?php
+					foreach ( $other_technology as $single_other_tech ) :
+						?>
+						<li> 
+							<?php get_template_part( '/assets/icons/tech-icons-php/inline', $single_other_tech ); ?>
+						</li>
+						<?php
+					endforeach;
+					?>
+					</ul>
+				</div>
 			</div>
 
 			<button class='accordion-tab'>Planning</button>
@@ -193,7 +195,7 @@ get_header();
 				$query = new WP_Query( $args );
 				while ( $query->have_posts() ) :
 					?>
-					<div id='view-more-container'>
+					<div class='view-more-container'>
 						<?php
 						$query->the_post();
 						$more_title = get_field( 'project_title' );

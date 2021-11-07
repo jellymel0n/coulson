@@ -1,0 +1,122 @@
+// Styles for contact form - mobile
+#form-container {
+
+    margin-bottom: 1.5rem;
+    padding: 0 0.7rem;
+
+    #nf-form-2-cont {
+
+        .nf-form-wrap {
+           
+            .nf-form-layout {
+
+                .nf-before-form-content {
+                    // Get rid of "required fields" text.
+                    display: none;
+                }
+
+                #nf-label-field-5,
+                #nf-label-field-6,
+                #nf-label-field-7 {
+                    // Get rid of field labels.
+                    display: none;
+                }
+
+                .nf-form-content input:not([type=button]),
+                .nf-form-content textarea  {
+                    // Input fields
+                    border-radius: 8px;
+                    border: 2px solid #282828;
+                }
+
+                .nf-field-container {
+                    margin-bottom: 18px;
+                    text-align: right;
+                }
+
+                .nf-field-element {
+
+                    input#nf-field-8 {
+                        border-radius: 25px;
+                        width: 35%;
+                        max-width: 8.625rem;
+                        border: 3px solid #ff7069;
+                        background-color: #282828;
+                        color: #ff7069;
+                        
+                    }
+                }
+            }
+
+            .nf-response-msg {
+                margin-top: 4rem;
+                text-align: center;
+            }
+        }
+    }
+}
+
+// Styles for contact form - Tablet 
+
+@media screen and (min-width: $mq__tablet) {
+
+    #form-container {
+
+        #nf-form-2-cont {
+    
+            .nf-form-wrap {
+               
+                .nf-form-layout {
+    
+                    .nf-field-container {
+                        margin-bottom: 18px;
+                        text-align: right;
+                    }
+    
+                    .nf-field-element {
+    
+                        input#nf-field-8 {
+                            
+                            width: 35%;
+                            max-width: 9.2rem;
+                            font-size: 1.2em;
+                            margin-bottom: 3.1rem;
+                        }
+                    }
+                }
+    
+                .nf-response-msg {
+                    margin-top: 4rem;
+                    text-align: center;
+                }
+            }
+        }
+    }
+}
+
+// Contact form style - desktop 
+@media screen and (min-width: $mq__desktop_small) {
+
+    #form-container {
+
+        #nf-form-2-cont {
+    
+            .nf-form-wrap {
+               
+                .nf-form-layout {
+    
+                    .nf-field-element {
+    
+                        input#nf-field-8 {
+                            
+                            width: 35%;
+                            max-width: 9.2rem;
+                            font-size: 1.2em;
+                            margin-bottom: 3.8rem;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

@@ -22,6 +22,35 @@
 	margin: 0 0 1.5em;
 }
 
+// Home page styles 
+.home {
+
+	background: linear-gradient(134deg, #ff716995, #66ffc779, #ff716995, #66ffc779);
+	background-size: 2000% 2000%;
+
+	-webkit-animation: gradient-animation 32s ease infinite;
+	-moz-animation: gradient-animation 32s ease infinite;
+	animation: gradient-animation 32s ease infinite;
+
+	
+	@-webkit-keyframes gradient-animation {
+		0%{background-position:0% 9%}
+		50%{background-position:100% 92%}
+		100%{background-position:0% 9%}
+	}
+	@-moz-keyframes gradient-animation {
+		0%{background-position:0% 9%}
+		50%{background-position:100% 92%}
+		100%{background-position:0% 9%}
+	}
+	@keyframes gradient-animation {
+		0%{background-position:0% 9%}
+		50%{background-position:100% 92%}
+		100%{background-position:0% 9%}
+	}
+}
+
+
 // Single Project Page - Mobile 
 .single-coulson-projects {
 	.site {
@@ -63,6 +92,7 @@
 				border-radius: 8px;
 				box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
 				margin: 1rem 0;
+				max-width: 12.5rem;
 			}
 
 			#live-site-link {
@@ -221,11 +251,6 @@
 			
 		}
 
-		// Project reflections section
-		#reflections {
-
-		}
-
 		// View More Projects section
 		h2#view-more {
 			text-align: center;
@@ -246,14 +271,15 @@
 
 		#view-more-section {
 
-			#view-more-container {
-			margin: 2rem 1.2rem;
+			.view-more-container {
+			margin: 2rem auto;
 			position: relative;
 			border: 3px solid #282828;
 			border-radius: 8px;
 			line-height: 0;
 			box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-			
+			max-width: 380px;
+			width: 92%;
 
 				h3 {
 					text-align: center;
@@ -295,6 +321,234 @@
 	}
 }
 
+// Single Projects Page - Tablet Styles 
+@media screen and (min-width: $mq__tablet) {
+
+	.single-coulson-projects {
+		
+		.site {
+
+			#single-img {
+
+				display: block;
+				max-width: 90%;
+				margin: 0 auto;
+				border: 3px solid #282828;
+				border-radius: 8px;
+				margin-top: 2rem;
+			}
+
+			.project-title {
+
+				font-size: 2rem;
+			}
+
+			#links {
+
+				justify-content: center;
+
+				#live-site-link {
+
+					margin-right: 10%;
+
+					a {
+						font-size: 1.2em;
+						vertical-align: text-bottom;
+					}
+
+					&:before {
+						font-size: 25px;
+						margin-right: 10px;
+					}
+				}
+
+				#github-link {
+
+					a {
+						font-size: 1.2em;
+						vertical-align: text-bottom;
+					}
+
+					&:before {
+						font-size: 27px;
+						margin-right: 10px;
+					}
+				}
+
+
+			}
+
+			#intro-info {
+				padding: 0 1.5rem;
+				margin-bottom: 3rem;
+
+				p {
+					font-size: 1.1em;
+				}
+			}
+
+			#tech-container {
+
+				width: 100%;
+				display: flex;
+				justify-content: center;
+				margin-bottom: 2rem;
+
+				#technology-used,
+				#other-technology {
+
+					width: 42%;
+					max-width: 28rem;
+				}
+
+				#technology-used {
+
+					margin-right: 2rem;
+				}
+			}
+
+			button.accordion-tab,
+			.accordion-content {
+
+				width: 92%;
+				margin: 0 auto;
+				max-width: 81.25rem;
+			}
+
+			button.accordion-tab {
+
+				&:nth-of-type(1) {
+					border-top-left-radius: 8px;
+					border-top-right-radius: 8px;
+				}
+
+				&:nth-of-type(4) {
+					border-bottom-left-radius: 8px;
+					border-bottom-right-radius: 8px;
+				}
+			}
+
+			button.accordion-tab.is-open {
+				border-bottom-left-radius: 0px;
+				border-bottom-right-radius: 0px;
+			}
+
+			.accordion-content {
+
+				padding: 0 1.5rem;
+
+				p {
+					font-size: 1.1em;
+				}
+
+				#planning, 
+				#design {
+
+					img {
+						width: 60%;
+					}
+				}
+			}
+
+			#view-more-section {
+
+				display: flex;
+				justify-content: center;
+				max-width: 950px;
+				margin: 0 auto;
+			}
+		}
+	}
+}
+
+// Single Projects Page - Desktop (sm) Styles
+@media screen and (min-width: $mq__desktop_small) {
+	
+	.single-coulson-projects {
+		
+		.site {
+			
+			#single-img {
+
+				width: 80%;
+				max-width: 81.25rem;
+			}
+
+			#links {
+
+				#live-site-link,
+				#github-link {
+
+					a {
+						font-size: 1.4em;
+					}
+				}
+
+				#github-link {
+
+					&:before {
+						font-size: 25px;
+					}
+				}
+			}
+
+			#intro-info {
+
+				max-width: 81.25rem;
+				margin: 0 auto;
+				font-size: 1.2em;
+				margin-bottom: 4rem;
+			}
+
+			#tech-container {
+
+				h2 {
+
+					font-size: 1.5em;
+				}
+
+				#technology-used,
+				#other-technology {
+
+					width: 48%;
+				}
+			}
+
+			button.accordion-tab {
+				font-size: 1.5em;
+			}
+
+			.accordion-content {
+
+				p {
+					font-size: 1.2em;
+				}
+			}
+
+			h2#view-more {
+				font-size: 2em;
+
+				&:after {
+					font-size: 30px;
+				}
+			}
+
+			#view-more-section {
+
+				max-width: 1100px;
+				margin: 0 auto;
+
+				.view-more-container {
+
+					max-width: 450px;
+				}
+			}
+		}
+	}
+}
+
+
+
 
 // Styles for Projects Archive Page - mobile
 
@@ -305,19 +559,71 @@
 			padding: 0 1rem;
 			// Top Banner 
 			#projects-banner {
+
 				border: 3px solid #282828;
 				border-radius: 8px;
-				padding: 4rem 4rem;
 				margin: 1.5rem 0.5rem;
+				position: relative;
 
 				h2 {
+
 					text-align: center;
 					font-size: 1.7em;
+					position: absolute;
+					height: 2.2rem;
+					margin: 0;
+					top: 39%;
+					bottom: 0;
+					left: 0;
+					right: 0;
+				}
+
+				#banner-tech-icons {
+
+					ul {
+
+						list-style: none;
+						display: flex;
+						flex-wrap: wrap;
+						margin: 0;
+						padding: 0;
+						justify-content: space-evenly;
+		
+						li {
+
+							svg {
+
+								fill: #282828;
+								width: 40px;
+								height: 40px;
+								margin: 0 0.2rem;
+							}
+
+							&:nth-of-type(odd) {
+
+								svg {
+
+								fill: #282828;
+								}
+							}
+
+							&:nth-of-type(10) {
+
+								svg {
+
+								margin-bottom: 2rem;
+								}
+							}
+
+						}
+						
+					}
 				}
 			}
 
 			// Isotope filter buttons
 			.button-group {
+
 				margin: 2.5rem auto;
 				display: flex;
 				flex-wrap: wrap;
@@ -325,6 +631,7 @@
 				justify-content: center;
 
 				button {
+
 					color: #fff;
 					border: 3px solid #282828;
 					background-color: #282828;
@@ -336,6 +643,7 @@
 				}
 
 				button.active {
+
 					color: #282828;
 					background-color: #ff7069;
 				}
@@ -343,12 +651,14 @@
 
 			// Project containers
 			.archive-project-container {
+
 				border: 3px solid #282828;
 				margin-bottom: 0.4rem;
 				border-radius: 8px;
 
 				.entry-header {
 					h3 {
+
 						text-align: center;
 						width: 100%;
 						font-size: 1.3em;
@@ -357,6 +667,7 @@
 						padding: 0.8rem 0;
 
 						a {
+
 							text-decoration: none;
 							color: #fff;
 							text-align: center;
@@ -369,6 +680,7 @@
 						background-color: #282828;
 						padding-bottom: 0.5rem;
 						ul {
+
 							list-style: none;
 							display: flex;
 							flex-wrap: wrap;
@@ -377,6 +689,7 @@
 							justify-content: space-evenly;
 			
 							svg {
+
 								fill: #fff;
 								width: 30px;
 								height: 30px;
@@ -391,14 +704,17 @@
 					margin-top: 0;
 
 					a {
+
 						display: block;
 						
 						img {
+
 							display: block;
 						}
 					}
 
 					p {
+
 						background-color: #282828;
 						margin: 0;
 						color: #fff;
@@ -410,6 +726,7 @@
 
 			.see-more-btn-container {
 				#see-more-btn {
+
 					display: inline-block;
 					text-align: left;
 					text-decoration: none;
@@ -422,6 +739,7 @@
 				}
 
 				&:nth-of-type(even) {
+
 					display: block;
 					text-align: right;
 				}
@@ -429,6 +747,300 @@
 		}
 	}
 }
+
+// Styles for project archive page - tablet 
+
+
+// Styles for contact page - Form styling in components/_forms.scss
+.page-id-20 {
+
+	.site {
+
+		#contact-header {
+			
+			h1 {
+
+				text-align: center;
+				color: #282828;
+
+				&:before {
+
+					content: '\f0e0';
+					font-family: 'FontAwesome';
+					font-size: 33px;
+					color: #282828;
+					padding-right: 10px;
+				}
+			}
+		}
+
+		#contact-body {
+
+			p {
+
+				padding: 0 1rem;
+				text-align: center;
+			}
+		}
+	}
+}
+
+// Style for contact page - tablet 
+@media screen and (min-width: $mq__tablet) {
+
+	.page-id-20 {
+
+		.site {
+
+			height: 100vh;
+
+			#contact-header {
+
+				h1 {
+
+					font-size: 2.5em;
+
+					&:before {
+
+						font-size: 41px;
+					}
+				}
+			}
+
+			#contact-body {
+
+				p {
+					font-size: 1.1em;
+				}
+			}
+		}
+	}
+}
+
+@media screen and (min-width: $mq__desktop_small) {
+
+	.page-id-20 {
+
+		.site {
+
+			#contact-header {
+
+				h1 {
+
+					font-size: 2.8em;
+
+					&:before {
+
+						font-size: 46px;
+					}
+				}
+			}
+
+			#contact-body {
+
+				p {
+					font-size: 1.3em;
+					margin-bottom: 4rem;
+				}
+			}
+		}
+	}
+
+}
+
+
+// Styles for about page 
+.page-id-18 {
+
+	.site {
+
+		h1 {
+			text-align: center;
+
+			&:before {
+				content: '\01F44B';
+				margin-right: 7px;
+				font-size: 32px;
+			}
+		}
+
+		#about-img {
+
+			img {
+				display: block;
+				max-height: 25rem;
+				border: 3px solid #282828;
+				border-radius: 8px;
+				margin: 0 auto;
+			}
+		}
+
+		#about-copy {
+			padding: 0 2rem;
+			margin-bottom: 3rem;
+		}
+
+		#contact-link-container {
+
+			text-align: center;
+
+			#contact-link {
+				display: inline-block;
+				text-align: center;
+				text-decoration: none;
+				color: #fff;
+				font-size: 1.4em;
+				background-color: #282828;
+				padding: 0.6rem 1rem;
+				border-radius: 25px;
+				margin: 0 auto;
+				margin-bottom: 3rem;
+
+				&:before {
+					content: '\f0e0';
+					font-family: 'FontAwesome';
+					font-size: 20px;
+					color: #fff;
+					margin-right: 10px;
+					text-align: center;
+				}
+			}
+		}
+	}
+}
+
+// About page styles - Tablet
+@media screen and (min-width: $mq__tablet) {
+
+	.page-id-18 {
+
+		.site {
+
+			height: 100vh;
+
+			h1 {
+
+				font-size: 2.5em;
+	
+				&:before {
+
+					margin-right: 10px;
+					font-size: 41px;
+				}
+			}
+	
+			#about-content {
+
+				display: flex;
+				justify-content: center;
+				max-height: 600px;
+				padding: 0 1rem;
+				
+				#about-img {
+					
+					padding-top: 1.4rem;
+
+					img {
+						display: block;
+						max-height: 30rem;
+						margin-right: 5rem;
+					}
+				}
+		
+				#about-copy {
+					width: 50%;
+					max-width: 38.75rem;
+					margin-top: 0;
+					padding-bottom: 1rem;
+
+					p {
+						font-size: 1em;
+						margin-top: 0;
+					}
+				}
+			}
+
+			#contact-link-container {
+		
+				#contact-link {
+
+					font-size: 1.6em;
+					padding: 0.7rem 1.2rem;
+					margin: 0 auto;
+					margin-top: 1.5rem;
+					margin-bottom: 4.2rem;
+	
+					&:before {
+
+						font-size: 24px;
+						margin-right: 10px;
+					}
+				}
+			}
+		}
+	}
+}
+
+// About page styles - desktop 
+@media screen and (min-width: $mq__desktop_small) {
+
+	.page-id-18 {
+
+		.site {
+
+			h1 {
+
+				font-size: 2.8em;
+	
+				&:before {
+
+					font-size: 45px;
+				}
+			}
+	
+			#about-content {
+				
+				#about-img {
+					
+					padding-top: 1rem;
+
+					img {
+						display: block;
+						max-height: 35rem;
+						margin-right: 5rem;
+					}
+				}
+		
+				#about-copy {
+					width: 50%;
+					max-width: 38.75rem;
+
+					p {
+						font-size: 1.2em;
+					}
+				}
+			}
+
+			#contact-link-container {
+		
+				#contact-link {
+
+					font-size: 1.8em;
+					padding: 0.7rem 1.2rem;
+					margin: 0 auto;
+					margin-top: 2.5rem;
+					margin-bottom: 6rem;
+	
+					&:before {
+
+						font-size: 27px;
+					}
+				}
+			}
+		}
+	}
+}
+
 
 // For ACF Demo - Delete after 
 .page-id-96 {

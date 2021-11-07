@@ -24,30 +24,43 @@ get_header();
 		$about_header = get_field( 'about_header' );
 		if ( $about_header ) :
 			?>
+			<section id="about-header">
 				<h1> <?php the_field( 'about_header' ); ?></h1>
-				<?php
+			</section>
+			<?php
 			endif;
-		
-        $about_headshot = get_field( 'headshot_image' );
-		if ( ! empty( $about_headshot ) ) :
 			?>
-				<img src="<?php echo esc_url( $about_headshot['url'] ); ?>" alt="<?php echo esc_attr( $about_headshot['alt'] ); ?>" />
+		<div id="about-content">
+			<?php
+			$about_headshot = get_field( 'headshot_image' );
+			if ( ! empty( $about_headshot ) ) :
+				?>
+				<section id="about-img">
+					<img src="<?php echo esc_url( $about_headshot['url'] ); ?>" alt="<?php echo esc_attr( $about_headshot['alt'] ); ?>" />
+				</section>
+					<?php
+				endif;
+
+			$about_copy = get_field( 'about_copy' );
+			if ( $about_copy ) :
+				?>
+				<section id="about-copy">
+					<p> <?php the_field( 'about_copy' ); ?></p>
+				</section>
 				<?php
-			endif;
-        
-        $about_copy = get_field( 'about_copy' );
-        if ( $about_copy ) :
-            ?>
-            <p> <?php the_field( 'about_copy' ); ?></p>
-            <?php
-            endif;
-            
-        $contact_link = get_field( 'contact_link' );
-        if ( $contact_link ) :
-            ?>
-            <button><a href="<?php echo esc_html( $contact_link ); ?>">Contact Me</a></button>
-            <?php 
-            endif;
+				endif;
+			?>
+		</div>
+			<?php
+
+			$contact_link = get_field( 'contact_link' );
+			if ( $contact_link ) :
+				?>
+				<div id="contact-link-container">
+					<a href="<?php echo esc_html( $contact_link ); ?>" id='contact-link'>Contact Me</a>
+				</div>
+				<?php
+				endif;
 
 		endwhile; // End of the loop.
 		?>
