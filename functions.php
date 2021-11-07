@@ -161,6 +161,12 @@ function coulson_scripts() {
 		wp_enqueue_script( 'coulson-isotope-init', get_template_directory_uri() . '/js/isotope-init.js', array(), _S_VERSION, true );
 	endif;
 
+	if ( is_front_page() ) :
+		wp_enqueue_script( 'coulson-jquery', 'https://code.jquery.com/jquery-3.6.0.min.js', array(), _S_VERSION, true );
+		wp_enqueue_script( 'coulson-gsap', 'https://cdnjs.cloudflare.com/ajax/libs/gsap/3.8.0/gsap.min.js', array(), _S_VERSION, true );
+		wp_enqueue_script( 'coulson-gsap-settings', get_template_directory_uri() . '/js/gsap-settings.js', array(), _S_VERSION, true );
+	endif;
+
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
@@ -199,8 +205,10 @@ require get_template_directory() . '/inc/cpt-taxonomy.php';
 
 /** Adding taxonomy slug as class name for isotope grid itms of projects archive page. */
 function isotope_classes( $id ) {
-	$terms = wp_get_post_terms( get_the_id(), 'coulson-project-type' );
+	$terms = wp_get_post_terms( $id, 'coulson-project-type' );
 	foreach ( $terms as $term ) :
+		$array = array();
 		echo esc_html( $term->slug . ' ' );
 	endforeach;
+	$array = array( '' );
 }

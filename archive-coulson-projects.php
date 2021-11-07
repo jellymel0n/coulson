@@ -14,31 +14,6 @@ get_header();
 
 		<?php if ( have_posts() ) : ?>
 
-			<div id="projects-banner">
-				<h2>Projects</h2>
-				<div id="banner-tech-icons">
-					<?php
-					$about_page = 18;
-					$tech_items = get_field( 'project_tech_banner_icons', $about_page );
-					if ( $tech_items ) :
-						?>
-						<ul>
-						<?php
-						foreach ( $tech_items as $single_item ) :
-							?>
-							<li> 
-								<?php get_template_part( '/assets/icons/tech-icons-php/inline', $single_item ); ?>
-							</li>
-							<?php
-						endforeach;
-						?>
-						</ul>
-						<?php
-					endif;
-					?>
-				</div>
-			</div>
-
 			<div class="button-group filter-button-group">
 				<button class='button active' data-filter="*">All Projects</button>
 				<button class='button' data-filter=".html-project">HTML/CSS</button>
@@ -49,9 +24,11 @@ get_header();
 			</div>
 
 			<div id='isotope-container' class='grid'>
+
 			<?php
 			/* Start the Loop */
 			while ( have_posts() ) :
+				
 				?> 
 				<div id="isotope-item" class='grid-item <?php isotope_classes( get_the_id() ); ?>'> 
 					<section class="archive-project-container">

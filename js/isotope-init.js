@@ -16,3 +16,14 @@ $('.filter-button-group').on( 'click', 'button', function() {
   var filterValue = $(this).attr('data-filter');
   $grid.isotope({ filter: filterValue });
 });
+
+// var $container = $('#container');
+// // init
+// $container.isotope({
+// // options
+// itemSelector: '.archive-project-container',
+// masonry: {
+// columnWidth: 480,
+// isFitWidth: true
+// }
+// });

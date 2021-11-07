@@ -6,7 +6,7 @@
  *
  * @package coulson
  */
-
+wp_head();
 get_header();
 ?>
 
@@ -16,9 +16,7 @@ get_header();
 		while ( have_posts() ) :
 			the_post();
 
-			get_template_part( 'template-parts/content', 'page' );
 
-			
 
 		endwhile; // End of the loop.
 		?>

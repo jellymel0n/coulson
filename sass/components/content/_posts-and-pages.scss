@@ -469,6 +469,10 @@
 				max-width: 81.25rem;
 			}
 
+			.project-title {
+				font-size: 2.7em;
+			}
+
 			#links {
 
 				#live-site-link,
@@ -552,74 +556,12 @@
 		.site-main {
 
 			padding: 0 1rem;
-			// Top Banner 
-			#projects-banner {
-
-				border: 3px solid #282828;
-				border-radius: 8px;
-				margin: 1.5rem 0.5rem;
-				position: relative;
-
-				h2 {
-
-					text-align: center;
-					font-size: 1.7em;
-					position: absolute;
-					height: 2.2rem;
-					margin: 0;
-					top: 39%;
-					bottom: 0;
-					left: 0;
-					right: 0;
-				}
-
-				#banner-tech-icons {
-
-					ul {
-
-						list-style: none;
-						display: flex;
-						flex-wrap: wrap;
-						margin: 0;
-						padding: 0;
-						justify-content: space-evenly;
-		
-						li {
-
-							svg {
-
-								fill: #282828;
-								width: 40px;
-								height: 40px;
-								margin: 0 0.2rem;
-							}
-
-							&:nth-of-type(odd) {
-
-								svg {
-
-								fill: #282828;
-								}
-							}
-
-							&:nth-of-type(10) {
-
-								svg {
-
-								margin-bottom: 2rem;
-								}
-							}
-
-						}
-						
-					}
-				}
-			}
 
 			// Isotope filter buttons
 			.button-group {
 
 				margin: 2.5rem auto;
+				max-width: 571px;
 				display: flex;
 				flex-wrap: wrap;
 				text-align: center;
@@ -645,76 +587,97 @@
 			}
 
 			// Project containers
-			.archive-project-container {
+			#isotope-container {
 
-				border: 3px solid #282828;
-				margin-bottom: 0.4rem;
-				border-radius: 8px;
+				max-width: 540px;
+				margin: 0 auto;
+				margin-bottom: 2rem;
 
-				.entry-header {
-					h3 {
+				#isotope-item {
 
-						text-align: center;
-						width: 100%;
-						font-size: 1.3em;
-						background-color: #282828;
-						margin: 0;
-						padding: 0.8rem 0;
+					max-width: 540px;
+					justify-content: center;
 
-						a {
+					.archive-project-container {
 
-							text-decoration: none;
-							color: #fff;
-							text-align: center;
+						border: 3px solid #282828;
+						margin-bottom: 0.4rem;
+						border-radius: 8px;
+
+						.entry-header {
+
+							margin-top: 0;
+
+							h3 {
+
+								text-align: center;
+								width: 100%;
+								display: block;
+								font-size: 1.3em;
+								background-color: #282828;
+								margin: 0;
+								padding: 0.8rem 0;
+
+								a {
+
+									text-decoration: none;
+									color: #fff;
+									text-align: center;
+								}
+							}
+
+							div#technology-header {
+
+								border: 2px solid #282828;
+								background-color: #282828;
+								padding-bottom: 0.5rem;
+								display: block;
+								width: 100%;
+								ul {
+
+									list-style: none;
+									width: 100%;
+									display: flex;
+									flex-wrap: nowrap;
+									flex-direction: row;
+									margin: 0;
+									padding: 0;
+									justify-content: space-evenly;
+					
+									svg {
+
+										fill: #fff;
+										width: 30px;
+										height: 30px;
+										margin: 0 0.4rem;
+									}
+								}
+							}
+							
 						}
-					}
 
-					div#technology-header {
+						.entry-content {
+							margin-top: 0;
 
-						border: 2px solid #282828;
-						background-color: #282828;
-						padding-bottom: 0.5rem;
-						ul {
+							a {
 
-							list-style: none;
-							display: flex;
-							flex-wrap: wrap;
-							margin: 0;
-							padding: 0;
-							justify-content: space-evenly;
-			
-							svg {
+								display: block;
+								
+								img {
 
-								fill: #fff;
-								width: 30px;
-								height: 30px;
-								margin: 0 0.4rem;
+									display: block;
+								}
+							}
+
+							p {
+
+								background-color: #282828;
+								margin: 0;
+								color: #fff;
+								padding: 1.3rem 0.8rem;
+								text-align: center;
 							}
 						}
-					}
-					
-				}
-
-				.entry-content {
-					margin-top: 0;
-
-					a {
-
-						display: block;
-						
-						img {
-
-							display: block;
-						}
-					}
-
-					p {
-
-						background-color: #282828;
-						margin: 0;
-						color: #fff;
-						padding: 1.3rem 0.8rem;
-						text-align: center;
 					}
 				}
 			}
@@ -744,7 +707,82 @@
 }
 
 // Styles for project archive page - tablet 
+@media screen and (min-width: 960px) {
+	.archive {
 
+		.site {
+
+			.site-main {
+
+				.button-group {
+					max-width: 700px;
+				}
+
+				#isotope-container {
+					max-width: 864px;
+					margin: 0 auto!important;
+
+					#isotope-item {
+						max-width: 400px;
+						margin: 1rem;
+					}
+				}
+
+			}
+		}
+	}
+}
+
+
+
+// Styles for Project archive page - Desktop (sm)
+@media screen and (min-width: $mq__desktop_small) {
+	.archive {
+
+		.site {
+
+			.site-main {
+
+				.button-group {
+					max-width: 1000px;
+				}
+
+				#isotope-container {
+					max-width: 1064px;
+					margin: 0 auto!important;
+
+					#isotope-item {
+						max-width: 500px;
+						margin: 1rem;
+					}
+				}
+
+			}
+		}
+	}
+}
+
+// Styles for Project archive page - Desktop (lg)
+@media screen and (min-width: 1780px) {
+	.archive {
+
+		.site {
+
+			.site-main {
+
+				#isotope-container {
+
+					max-width: 1728px;
+
+					#isotope-item {
+						max-width: 400px;
+					}
+				}
+
+			}
+		}
+	}
+}
 
 // Styles for contact page - Form styling in components/_forms.scss
 .page-id-20 {
@@ -812,6 +850,7 @@
 	}
 }
 
+// Styles for contact page - Desktop
 @media screen and (min-width: $mq__desktop_small) {
 
 	.page-id-20 {
@@ -840,7 +879,6 @@
 			}
 		}
 	}
-
 }
 
 
@@ -901,6 +939,81 @@
 				}
 			}
 		}
+
+		// Accordion styles
+		button.accordion-tab {
+			width: 100%;
+			background-color: #282828;
+			border-radius: 0;
+			color: white;
+			border: none;
+			border-bottom: 2px solid #fff;
+			outline: none;
+			padding: 1.8rem 1.1rem;
+			font-size: 1.3rem;
+			text-align: left;
+			cursor: pointer;
+			transition: background-color 0.2s linear;
+			display: flex;
+			justify-content: space-between;
+
+			&:after {
+				content: '\f055';
+				font-family: 'FontAwesome';
+				font-size: 20px;
+				font-weight: 500;
+				padding-top: 1px;
+			}
+		}
+
+		button.is-open {
+
+			background-color: #313d4f;
+
+			&:after {
+				content: '\f056';
+			}
+		}
+
+		.accordion-content {
+			max-height: 0;
+			overflow: hidden;
+			transition: max-height 0.3s ease-in-out;
+			padding: 0 1rem;
+			margin-top: 1rem;
+
+			#about-tech-icons {
+
+				margin: 0 auto;
+
+				ul {
+
+					list-style: none;
+					display: flex;
+					max-width: 435px;
+					flex-wrap: wrap;
+					margin: 0 auto;
+					padding: 0;
+					justify-content: space-evenly;
+	
+					li {
+
+						svg {
+
+							fill: #282828;
+							width: 60px;
+							height: 60px;
+							margin: 0.2rem 0.3rem;
+						}
+					}
+				}
+			}
+		}
+
+		footer {
+			margin-top: 3rem;
+		}
+		
 	}
 }
 
@@ -934,16 +1047,17 @@
 				#about-img {
 					
 					padding-top: 1.4rem;
+					padding-left: 1rem;
 
 					img {
 						display: block;
 						max-height: 30rem;
-						margin-right: 5rem;
+						margin-right: 1rem;
 					}
 				}
 		
 				#about-copy {
-					width: 50%;
+					width: 65%;
 					max-width: 38.75rem;
 					margin-top: 0;
 					padding-bottom: 1rem;
@@ -969,6 +1083,45 @@
 
 						font-size: 24px;
 						margin-right: 10px;
+					}
+				}
+			}
+
+			// Accordion styles
+			button.accordion-tab {
+				width: 60%;
+				max-width: 690px;
+				margin: 0 auto;
+				border-top-left-radius: 8px;
+				border-top-right-radius: 8px;
+			}
+
+			.accordion-content {
+
+				#about-tech-icons {
+
+					margin: 0 auto;
+
+					ul {
+
+						list-style: none;
+						display: flex;
+						max-width: 465px;
+						flex-wrap: wrap;
+						margin: 0 auto;
+						padding: 0;
+						justify-content: space-evenly;
+		
+						li {
+
+							svg {
+
+								fill: #282828;
+								width: 65px;
+								height: 65px;
+								margin: 0.2rem 0.3rem;
+							}
+						}
 					}
 				}
 			}
@@ -998,6 +1151,7 @@
 				#about-img {
 					
 					padding-top: 1rem;
+					padding-left: 3rem;
 
 					img {
 						display: block;
@@ -1007,7 +1161,7 @@
 				}
 		
 				#about-copy {
-					width: 50%;
+					width: 60%;
 					max-width: 38.75rem;
 
 					p {
@@ -1032,10 +1186,64 @@
 					}
 				}
 			}
+
+			.accordion-content {
+
+				#about-tech-icons {
+
+					ul {
+
+						max-width: 555px;
+		
+						li {
+
+							svg {
+
+								fill: #282828;
+								width: 70px;
+								height: 70px;
+								margin: 0.2rem 0.3rem;
+							}
+						}
+					}
+				}
+			}
 		}
 	}
 }
 
+
+// About page styles - desktop large
+@media screen and (min-width: $mq__desktop_large) {
+
+	.page-id-18 {
+
+		.site {
+	
+			.accordion-content {
+
+				#about-tech-icons {
+
+					ul {
+
+						max-width: 640px;
+		
+						li {
+
+							svg {
+
+								fill: #282828;
+								width: 70px;
+								height: 70px;
+								margin: 0.2rem 0.3rem;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
 
 // For ACF Demo - Delete after 
 .page-id-96 {

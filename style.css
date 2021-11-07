@@ -641,6 +641,9 @@ footer .footer-nav ul li svg {
 	width: 40px;
 	height: 40px;
 }
+footer .footer-nav ul li svg:hover {
+	fill: #ff7069;
+}
 footer .footer-nav ul li a {
 	text-decoration: none;
 }
@@ -1185,6 +1188,9 @@ header .main-navigation ul li.focus > ul {
 		width: 80%;
 		max-width: 81.25rem;
 	}
+	.single-coulson-projects .site .project-title {
+		font-size: 2.7em;
+	}
 	.single-coulson-projects .site #links #live-site-link a,
 .single-coulson-projects .site #links #github-link a {
 		font-size: 1.4em;
@@ -1228,45 +1234,9 @@ header .main-navigation ul li.focus > ul {
 .archive .site .site-main {
 	padding: 0 1rem;
 }
-.archive .site .site-main #projects-banner {
-	border: 3px solid #282828;
-	border-radius: 8px;
-	margin: 1.5rem 0.5rem;
-	position: relative;
-}
-.archive .site .site-main #projects-banner h2 {
-	text-align: center;
-	font-size: 1.7em;
-	position: absolute;
-	height: 2.2rem;
-	margin: 0;
-	top: 39%;
-	bottom: 0;
-	left: 0;
-	right: 0;
-}
-.archive .site .site-main #projects-banner #banner-tech-icons ul {
-	list-style: none;
-	display: flex;
-	flex-wrap: wrap;
-	margin: 0;
-	padding: 0;
-	justify-content: space-evenly;
-}
-.archive .site .site-main #projects-banner #banner-tech-icons ul li svg {
-	fill: #282828;
-	width: 40px;
-	height: 40px;
-	margin: 0 0.2rem;
-}
-.archive .site .site-main #projects-banner #banner-tech-icons ul li:nth-of-type(odd) svg {
-	fill: #282828;
-}
-.archive .site .site-main #projects-banner #banner-tech-icons ul li:nth-of-type(10) svg {
-	margin-bottom: 2rem;
-}
 .archive .site .site-main .button-group {
 	margin: 2.5rem auto;
+	max-width: 571px;
 	display: flex;
 	flex-wrap: wrap;
 	text-align: center;
@@ -1286,53 +1256,70 @@ header .main-navigation ul li.focus > ul {
 	color: #282828;
 	background-color: #ff7069;
 }
-.archive .site .site-main .archive-project-container {
+.archive .site .site-main #isotope-container {
+	max-width: 540px;
+	margin: 0 auto;
+	margin-bottom: 2rem;
+}
+.archive .site .site-main #isotope-container #isotope-item {
+	max-width: 540px;
+	justify-content: center;
+}
+.archive .site .site-main #isotope-container #isotope-item .archive-project-container {
 	border: 3px solid #282828;
 	margin-bottom: 0.4rem;
 	border-radius: 8px;
 }
-.archive .site .site-main .archive-project-container .entry-header h3 {
+.archive .site .site-main #isotope-container #isotope-item .archive-project-container .entry-header {
+	margin-top: 0;
+}
+.archive .site .site-main #isotope-container #isotope-item .archive-project-container .entry-header h3 {
 	text-align: center;
 	width: 100%;
+	display: block;
 	font-size: 1.3em;
 	background-color: #282828;
 	margin: 0;
 	padding: 0.8rem 0;
 }
-.archive .site .site-main .archive-project-container .entry-header h3 a {
+.archive .site .site-main #isotope-container #isotope-item .archive-project-container .entry-header h3 a {
 	text-decoration: none;
 	color: #fff;
 	text-align: center;
 }
-.archive .site .site-main .archive-project-container .entry-header div#technology-header {
+.archive .site .site-main #isotope-container #isotope-item .archive-project-container .entry-header div#technology-header {
 	border: 2px solid #282828;
 	background-color: #282828;
 	padding-bottom: 0.5rem;
+	display: block;
+	width: 100%;
 }
-.archive .site .site-main .archive-project-container .entry-header div#technology-header ul {
+.archive .site .site-main #isotope-container #isotope-item .archive-project-container .entry-header div#technology-header ul {
 	list-style: none;
+	width: 100%;
 	display: flex;
-	flex-wrap: wrap;
+	flex-wrap: nowrap;
+	flex-direction: row;
 	margin: 0;
 	padding: 0;
 	justify-content: space-evenly;
 }
-.archive .site .site-main .archive-project-container .entry-header div#technology-header ul svg {
+.archive .site .site-main #isotope-container #isotope-item .archive-project-container .entry-header div#technology-header ul svg {
 	fill: #fff;
 	width: 30px;
 	height: 30px;
 	margin: 0 0.4rem;
 }
-.archive .site .site-main .archive-project-container .entry-content {
+.archive .site .site-main #isotope-container #isotope-item .archive-project-container .entry-content {
 	margin-top: 0;
 }
-.archive .site .site-main .archive-project-container .entry-content a {
+.archive .site .site-main #isotope-container #isotope-item .archive-project-container .entry-content a {
 	display: block;
 }
-.archive .site .site-main .archive-project-container .entry-content a img {
+.archive .site .site-main #isotope-container #isotope-item .archive-project-container .entry-content a img {
 	display: block;
 }
-.archive .site .site-main .archive-project-container .entry-content p {
+.archive .site .site-main #isotope-container #isotope-item .archive-project-container .entry-content p {
 	background-color: #282828;
 	margin: 0;
 	color: #fff;
@@ -1355,6 +1342,40 @@ header .main-navigation ul li.focus > ul {
 	text-align: right;
 }
 
+@media screen and (min-width: 960px) {
+	.archive .site .site-main .button-group {
+		max-width: 700px;
+	}
+	.archive .site .site-main #isotope-container {
+		max-width: 864px;
+		margin: 0 auto !important;
+	}
+	.archive .site .site-main #isotope-container #isotope-item {
+		max-width: 400px;
+		margin: 1rem;
+	}
+}
+@media screen and (min-width: 1100px) {
+	.archive .site .site-main .button-group {
+		max-width: 1000px;
+	}
+	.archive .site .site-main #isotope-container {
+		max-width: 1064px;
+		margin: 0 auto !important;
+	}
+	.archive .site .site-main #isotope-container #isotope-item {
+		max-width: 500px;
+		margin: 1rem;
+	}
+}
+@media screen and (min-width: 1780px) {
+	.archive .site .site-main #isotope-container {
+		max-width: 1728px;
+	}
+	.archive .site .site-main #isotope-container #isotope-item {
+		max-width: 400px;
+	}
+}
 .page-id-20 .site #contact-header h1 {
 	text-align: center;
 	color: #282828;
@@ -1439,6 +1460,63 @@ header .main-navigation ul li.focus > ul {
 	margin-right: 10px;
 	text-align: center;
 }
+.page-id-18 .site button.accordion-tab {
+	width: 100%;
+	background-color: #282828;
+	border-radius: 0;
+	color: white;
+	border: none;
+	border-bottom: 2px solid #fff;
+	outline: none;
+	padding: 1.8rem 1.1rem;
+	font-size: 1.3rem;
+	text-align: left;
+	cursor: pointer;
+	transition: background-color 0.2s linear;
+	display: flex;
+	justify-content: space-between;
+}
+.page-id-18 .site button.accordion-tab:after {
+	content: "\f055";
+	font-family: "FontAwesome";
+	font-size: 20px;
+	font-weight: 500;
+	padding-top: 1px;
+}
+.page-id-18 .site button.is-open {
+	background-color: #313d4f;
+}
+.page-id-18 .site button.is-open:after {
+	content: "\f056";
+}
+.page-id-18 .site .accordion-content {
+	max-height: 0;
+	overflow: hidden;
+	transition: max-height 0.3s ease-in-out;
+	padding: 0 1rem;
+	margin-top: 1rem;
+}
+.page-id-18 .site .accordion-content #about-tech-icons {
+	margin: 0 auto;
+}
+.page-id-18 .site .accordion-content #about-tech-icons ul {
+	list-style: none;
+	display: flex;
+	max-width: 435px;
+	flex-wrap: wrap;
+	margin: 0 auto;
+	padding: 0;
+	justify-content: space-evenly;
+}
+.page-id-18 .site .accordion-content #about-tech-icons ul li svg {
+	fill: #282828;
+	width: 60px;
+	height: 60px;
+	margin: 0.2rem 0.3rem;
+}
+.page-id-18 .site footer {
+	margin-top: 3rem;
+}
 
 @media screen and (min-width: 768px) {
 	.page-id-18 .site {
@@ -1459,14 +1537,15 @@ header .main-navigation ul li.focus > ul {
 	}
 	.page-id-18 .site #about-content #about-img {
 		padding-top: 1.4rem;
+		padding-left: 1rem;
 	}
 	.page-id-18 .site #about-content #about-img img {
 		display: block;
 		max-height: 30rem;
-		margin-right: 5rem;
+		margin-right: 1rem;
 	}
 	.page-id-18 .site #about-content #about-copy {
-		width: 50%;
+		width: 65%;
 		max-width: 38.75rem;
 		margin-top: 0;
 		padding-bottom: 1rem;
@@ -1486,6 +1565,31 @@ header .main-navigation ul li.focus > ul {
 		font-size: 24px;
 		margin-right: 10px;
 	}
+	.page-id-18 .site button.accordion-tab {
+		width: 60%;
+		max-width: 690px;
+		margin: 0 auto;
+		border-top-left-radius: 8px;
+		border-top-right-radius: 8px;
+	}
+	.page-id-18 .site .accordion-content #about-tech-icons {
+		margin: 0 auto;
+	}
+	.page-id-18 .site .accordion-content #about-tech-icons ul {
+		list-style: none;
+		display: flex;
+		max-width: 465px;
+		flex-wrap: wrap;
+		margin: 0 auto;
+		padding: 0;
+		justify-content: space-evenly;
+	}
+	.page-id-18 .site .accordion-content #about-tech-icons ul li svg {
+		fill: #282828;
+		width: 65px;
+		height: 65px;
+		margin: 0.2rem 0.3rem;
+	}
 }
 @media screen and (min-width: 1100px) {
 	.page-id-18 .site h1 {
@@ -1496,6 +1600,7 @@ header .main-navigation ul li.focus > ul {
 	}
 	.page-id-18 .site #about-content #about-img {
 		padding-top: 1rem;
+		padding-left: 3rem;
 	}
 	.page-id-18 .site #about-content #about-img img {
 		display: block;
@@ -1503,7 +1608,7 @@ header .main-navigation ul li.focus > ul {
 		margin-right: 5rem;
 	}
 	.page-id-18 .site #about-content #about-copy {
-		width: 50%;
+		width: 60%;
 		max-width: 38.75rem;
 	}
 	.page-id-18 .site #about-content #about-copy p {
@@ -1518,6 +1623,26 @@ header .main-navigation ul li.focus > ul {
 	}
 	.page-id-18 .site #contact-link-container #contact-link:before {
 		font-size: 27px;
+	}
+	.page-id-18 .site .accordion-content #about-tech-icons ul {
+		max-width: 555px;
+	}
+	.page-id-18 .site .accordion-content #about-tech-icons ul li svg {
+		fill: #282828;
+		width: 70px;
+		height: 70px;
+		margin: 0.2rem 0.3rem;
+	}
+}
+@media screen and (min-width: 1700px) {
+	.page-id-18 .site .accordion-content #about-tech-icons ul {
+		max-width: 640px;
+	}
+	.page-id-18 .site .accordion-content #about-tech-icons ul li svg {
+		fill: #282828;
+		width: 70px;
+		height: 70px;
+		margin: 0.2rem 0.3rem;
 	}
 }
 .page-id-96 .site #tech-used {
