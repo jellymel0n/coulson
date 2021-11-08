@@ -164,6 +164,7 @@ function coulson_scripts() {
 	if ( is_front_page() ) :
 		wp_enqueue_script( 'coulson-jquery', 'https://code.jquery.com/jquery-3.6.0.min.js', array(), _S_VERSION, true );
 		wp_enqueue_script( 'coulson-gsap', 'https://cdnjs.cloudflare.com/ajax/libs/gsap/3.8.0/gsap.min.js', array(), _S_VERSION, true );
+		wp_enqueue_script( 'coulson-gsap-text', 'https://cdnjs.cloudflare.com/ajax/libs/gsap/3.8.0/TextPlugin.min.js', array(), _S_VERSION, true );
 		wp_enqueue_script( 'coulson-gsap-settings', get_template_directory_uri() . '/js/gsap-settings.js', array(), _S_VERSION, true );
 	endif;
 

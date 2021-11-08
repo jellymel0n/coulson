@@ -1,102 +1,29 @@
-var dur = 1;
+const words = ['develops', 'designs', 'creates'];
+const lastWord = 'codes.';
 
-TweenMax.set("#box", {
-  perspective: 1000,
-});
-TweenMax.set(".box", {
-  transformStyle: "preserve-3d",
-});
-TweenMax.set(".box div", {
-  transformStyle: "preserve-3d",
-  transformOrigin: "50% 50% -50px",
-  transformPerspective: 1000,
-});
-TweenMax.set(".back", {
-  rotationY: 180,
-});
-TweenMax.set(".right", {
-  rotationY: 270,
-});
-TweenMax.set(".left", {
-  rotationY: 90,
-});
-TweenMax.set(".top", {
-  rotationX: 90,
-});
-TweenMax.set(".bottom", {
-  rotationX: 270,
-});
+let cursor = gsap.to('.cursor', {duration: 0.6, opacity: 0, ease: 'power3.inOut', repeat: -1});
 
-var tlFaces = new TimelineMax({
-  paused: true, //,
-  //repeat: -1
-});
-tlFaces
-  .to(
-    ".front",
-    dur,
-    {
-      rotationX: "+=90",
-      ease: Linear.easeNone,
-    },
-    0
-  )
-  .to(
-    ".back",
-    dur,
-    {
-      rotationX: "-=90",
-      ease: Linear.easeNone,
-    },
-    0
-  )
-  .to(
-    ".top",
-    dur,
-    {
-      rotationX: "+=90",
-      ease: Linear.easeNone,
-    },
-    0
-  )
-  .to(
-    ".bottom",
-    dur,
-    {
-      rotationX: "+=90",
-      ease: Linear.easeNone,
-    },
-    0
-  )
-  .to(
-    ".left div",
-    dur,
-    {
-      rotationZ: "+=90",
-      ease: Linear.easeNone,
-    },
-    0
-  )
-  .to(
-    ".right div",
-    dur,
-    {
-      rotationZ: "-=90",
-      ease: Linear.easeNone,
-    },
-    0
-  );
+let coulsonText = gsap.timeline()
 
-var clicked = 0;
-$(document).on("click", "#rotateXplus", function () {
-    
-  if (clicked == 0) {
-    tlFaces.play();
-    clicked = 1;
-  } else if (clicked == 1) {
-    tlFaces.reverse();
-    clicked = 0;
-  }
-});
 
-console.log('test');
+coulsonText.from( '.coulson', {duration: 1, y:'10vw', ease: 'power3.out', onComplete: () => masterTL.play()})
+  .to('.coulson', 1, {opacity: 1}, 0)
+  
+
+let masterTL = gsap.timeline({repeat: 0, onComplete: () => masterTL.pause()}).pause()
+
+words.forEach(word => {
+let tl = gsap.timeline({repeat: 1, yoyo: true, repeatDelay: 1})
+  tl.to( '.text', {duration: 1, text: word, x: '-10px'})
+
+  masterTL.add(tl);
+})
+
+let tl2 = gsap.timeline({repeat: 0, yoyo: false, repeatDelay: 1})
+  tl2.to( '.text', {duration: 1, text: lastWord, onComplete: () => textTL.play()})
+
+  masterTL.add(tl2);
+
+let textTL = gsap.timeline().pause()
+textTL.from( '.text-container', 1, {duration: 1, y:'10vw', ease: 'power3.out'})
+  .to('.text-container', 1, {opacity: 1}, 0)

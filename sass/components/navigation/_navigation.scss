@@ -54,7 +54,7 @@ footer {
 // Mobile Navigation - Bottom Nav Bar
 
 @media screen and (max-width: $mq__tablet) {
-	header {
+	header.site-header {
 
 		.site-branding {
 			width: 80vw;
@@ -156,7 +156,7 @@ footer {
 
 @media screen and (min-width: 520px) {
 
-	header {
+	header.site-header {
 		nav.mobile-navigation {
 			ul {
 				padding: 0.5rem 2rem;
@@ -181,7 +181,7 @@ footer {
 
 @media screen and (min-width: $mq__tablet) {
 
-	header{
+	header.site-header{
 		
 		display: flex;
 		margin-top: 1rem;
@@ -252,9 +252,10 @@ footer {
 }
 
 @media screen and (min-width: $mq__tablet) and (max-width: $mq__desktop_small) {
-	header {
+	header.site-header {
 		display: flex;
 		flex-direction: column;
+		padding: 0 1rem;
 
 		.site-branding {
 			width: 60vw;
@@ -273,5 +274,12 @@ footer {
 				}
 			}
 		}
+	}
+}
+
+@media screen and (min-width: $mq__desktop_small) {
+
+	header.site-header {
+		padding: 0 4rem;
 	}
 }

@@ -26,7 +26,7 @@
 .home {
 
 	background: linear-gradient(134deg, #ff716995, #66ffc779, #ff716995, #66ffc779);
-	background-size: 2000% 2000%;
+	background-size: 400% 400%;
 
 	-webkit-animation: gradient-animation 32s ease infinite;
 	-moz-animation: gradient-animation 32s ease infinite;
@@ -48,8 +48,130 @@
 		50%{background-position:100% 92%}
 		100%{background-position:0% 9%}
 	}
+
+	.intro-container {
+
+		display: flex;
+
+		h1 {
+			
+			position: relative;
+			font-size: 7.7vw;
+			font-weight: bold;
+			overflow: hidden;
+			margin: 0 auto;
+			padding-top: 24vh;
+			color: #282828;
+
+			span.box {
+				position: absolute;
+				bottom: 0;
+				display:inline-block;
+				background: #ff7069;
+				width: 0px;
+				height: 1vw;
+				z-index: -1;
+			}
+
+			span.coulson {
+				display: inline-block;
+				opacity: 0;
+			}
+
+			span.text {
+				
+			}
+
+			span.cursor {
+				font-weight: normal;
+			}
+		}
+	}
+
+	.text-container {
+
+		overflow: hidden;
+		opacity: 0;
+		
+		p {
+			margin: 0 auto;
+			text-align: center;
+			font-size: 4vw;
+			padding: 2rem;
+			overflow: hidden;
+			font-weight: 500;
+			color: #282828;
+		}
+	}
+
+	footer {
+		display: none;
+	}
 }
 
+// Home page styles - Tablet 
+@media screen and (min-width: $mq__tablet) {
+	
+	.home {
+		.intro-container {
+
+			h1 {
+				padding-top: 21vh;
+			}
+		}
+
+		.text-container {
+
+			p {
+				padding: 3rem;
+			}
+		}
+	}
+}
+
+// Home page styles - desktop (sm) 
+@media screen and (min-width: $mq__desktop_small) {
+	
+	.home {
+		.intro-container {
+
+			h1 {
+				padding-top: 21vh;
+				font-size: 6.5vw;
+			}
+		}
+
+		.text-container {
+
+			p {
+				font-size: 2.2vw;
+				padding: 3rem;
+			}
+		}
+	}
+}
+
+// Home page styles - desktop (sm) 
+@media screen and (min-width: $mq__desktop_large) {
+	
+	.home {
+		.intro-container {
+
+			h1 {
+				padding-top: 20vh;
+				font-size: 5.5vw;
+			}
+		}
+
+		.text-container {
+
+			p {
+				font-size: 1.7vw;
+				padding: 3rem;
+			}
+		}
+	}
+}
 
 // Single Project Page - Mobile 
 .single-coulson-projects {

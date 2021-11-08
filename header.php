@@ -17,17 +17,6 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="profile" href="https://gmpg.org/xfn/11">
 
-	<?php
-	if ( is_front_page() ) :
-		?>
-		<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.8.0/gsap.min.js"></script>
-		<script src="/js/gsap-settings.js"></script>
-		<?php
-	endif;
-	?>
-	
-
 	<?php wp_head(); ?>
 </head>
 
