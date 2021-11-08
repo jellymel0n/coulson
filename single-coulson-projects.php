@@ -208,7 +208,9 @@ get_header();
 						$more_image = get_field( 'project_featured_image' );
 						if ( ! empty( $more_image ) ) :
 							?>
-							<img src="<?php echo esc_url( $more_image['url'] ); ?>" alt="<?php echo esc_attr( $more_image['alt'] ); ?>" />
+							<a href="<?php echo esc_url( get_permalink() ); ?>">
+								<img src="<?php echo esc_url( $more_image['url'] ); ?>" alt="<?php echo esc_attr( $more_image['alt'] ); ?>" />
+							</a>
 							<?php
 						endif;
 						?>

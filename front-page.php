@@ -18,7 +18,6 @@ get_header();
 			?>
 			<div class="intro-container">
 				<h1>
-					<span class="box"></span>
 					<span class="coulson">Chris Coulson</span>
 					<span class="text"></span>
 					<span class="cursor">|</span>

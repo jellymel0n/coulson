@@ -904,16 +904,7 @@ header.site-header .main-navigation ul li.focus > ul {
 	overflow: hidden;
 	margin: 0 auto;
 	padding-top: 24vh;
-	color: #282828;
-}
-.home .intro-container h1 span.box {
-	position: absolute;
-	bottom: 0;
-	display: inline-block;
-	background: #ff7069;
-	width: 0px;
-	height: 1vw;
-	z-index: -1;
+	color: #313d4f;
 }
 .home .intro-container h1 span.coulson {
 	display: inline-block;

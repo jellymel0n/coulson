@@ -61,17 +61,7 @@
 			overflow: hidden;
 			margin: 0 auto;
 			padding-top: 24vh;
-			color: #282828;
-
-			span.box {
-				position: absolute;
-				bottom: 0;
-				display:inline-block;
-				background: #ff7069;
-				width: 0px;
-				height: 1vw;
-				z-index: -1;
-			}
+			color: #313d4f;
 
 			span.coulson {
 				display: inline-block;
@@ -94,6 +84,7 @@
 		opacity: 0;
 		
 		p {
+
 			margin: 0 auto;
 			text-align: center;
 			font-size: 4vw;
