@@ -208,8 +208,6 @@ require get_template_directory() . '/inc/cpt-taxonomy.php';
 function isotope_classes( $id ) {
 	$terms = wp_get_post_terms( $id, 'coulson-project-type' );
 	foreach ( $terms as $term ) :
-		$array = array();
 		echo esc_html( $term->slug . ' ' );
 	endforeach;
-	$array = array( '' );
 }

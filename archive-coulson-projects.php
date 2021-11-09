@@ -28,13 +28,12 @@ get_header();
 			<?php
 			/* Start the Loop */
 			while ( have_posts() ) :
-				
-				?> 
+
+				the_post();
+				?>
 				<div id="isotope-item" class='grid-item <?php isotope_classes( get_the_id() ); ?>'> 
 					<section class="archive-project-container">
-						<?php
-						the_post();
-						?>
+						
 						<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 							<header class="entry-header">
 								<?php

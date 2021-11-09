@@ -846,11 +846,6 @@ header.site-header .main-navigation ul li.focus > ul {
 	display: block;
 }
 
-.post,
-.page {
-	margin: 0 0 1.5em;
-}
-
 .updated:not(.published) {
 	display: none;
 }
@@ -1338,6 +1333,7 @@ header.site-header .main-navigation ul li.focus > ul {
 	border: 3px solid #282828;
 	margin-bottom: 0.4rem;
 	border-radius: 8px;
+	box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 .archive .site .site-main #isotope-container #isotope-item .archive-project-container .entry-header {
 	margin-top: 0;
@@ -1405,6 +1401,7 @@ header.site-header .main-navigation ul li.focus > ul {
 	padding: 0.6rem 1rem;
 	border-radius: 25px;
 	margin-bottom: 3rem;
+	margin-top: 0.5rem;
 }
 .archive .site .site-main .see-more-btn-container:nth-of-type(even) {
 	display: block;
@@ -1714,35 +1711,6 @@ header.site-header .main-navigation ul li.focus > ul {
 		margin: 0.2rem 0.3rem;
 	}
 }
-.page-id-96 .site #tech-used {
-	border: 2px solid #282828;
-	border-radius: 8px;
-	margin: 0 1rem;
-	margin-bottom: 2.2rem;
-	background-color: #282828;
-	box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
-}
-.page-id-96 .site #tech-used h2 {
-	text-align: center;
-	font-size: 1.2rem;
-	color: #fff;
-	letter-spacing: 1px;
-}
-.page-id-96 .site #tech-used ul {
-	list-style: none;
-	display: flex;
-	flex-wrap: wrap;
-	margin: 0;
-	padding: 0;
-	justify-content: space-evenly;
-}
-.page-id-96 .site #tech-used ul svg {
-	fill: #fff;
-	width: 70px;
-	height: 70px;
-	margin: 0 0.4rem;
-}
-
 #form-container {
 	margin-bottom: 1.5rem;
 	padding: 0 0.7rem;
