@@ -24,7 +24,7 @@ get_header();
 			endif;
 			?>
 
-			<?php	
+			<?php
 			if ( get_field( 'project_title' ) ) :
 				?>
 				<h1 class='project-title'> <?php the_field( 'project_title' ); ?> </h1>
@@ -35,10 +35,10 @@ get_header();
 			<div id="links">		
 				<div id="live-site-link">
 					<?php
-					$live_site_link = get_field('live_site_link');
+					$live_site_link = get_field( 'live_site_link' );
 					if ( $live_site_link ) :
 						?>
-						<a href="<?php echo esc_url( $live_site_link['url'] ) ?>" target='_blank'>Live Site</a>
+						<a href="<?php echo esc_url( $live_site_link['url'] ); ?>" target='_blank'>Live Site</a>
 						<?php
 					endif;
 					?>
@@ -46,10 +46,10 @@ get_header();
 
 				<div id="github-link">
 					<?php
-					$github_link = get_field('github_link');
+					$github_link = get_field( 'github_link' );
 					if ( $github_link ) :
 						?>
-						<a href="<?php echo esc_url( $github_link['url'] ) ?>" target='_blank'>GitHub</a>
+						<a href="<?php echo esc_url( $github_link['url'] ); ?>" target='_blank'>GitHub</a>
 						<?php
 					endif;
 					?>
@@ -57,7 +57,7 @@ get_header();
 			</div>
 
 			<div id="intro-info"> 
-				<?php 
+				<?php
 				if ( get_field( 'project_description' ) ) :
 					?>
 						<p><?php the_field( 'project_description' ); ?></p>
@@ -70,7 +70,7 @@ get_header();
 				<div id="technology-used">
 					<h2>Development Tools</h2>
 					<?php
-					$technology = get_field( 'technology_used' ); 
+					$technology = get_field( 'technology_used' );
 					?>
 					<ul>
 					<?php
@@ -88,7 +88,7 @@ get_header();
 				<div id="other-technology">
 					<h2>Other Tools</h2>
 					<?php
-					$other_technology = get_field( 'other_technology' ); 
+					$other_technology = get_field( 'other_technology' );
 					?>
 					<ul>
 					<?php
@@ -154,8 +154,12 @@ get_header();
 					<section id="development">
 						<p id='development-intro'><?php echo acf_esc_html( $development['development_text'] ); ?></p>
 
-						<div>
-							<?php echo acf_esc_html( $development['development_embed'] ); ?>
+						<div class='code-container'>
+							<pre>
+								<code>
+								<?php echo acf_esc_html( $development['development_code'] ); ?>	
+								</code>
+							</pre>
 						</div>
 					</section>
 					<?php
@@ -188,7 +192,7 @@ get_header();
 					'orderby'        => 'rand',
 					'post__not_in'   => array(
 						get_the_ID(),
-					)
+					),
 				);
 				$current_project = get_the_ID();
 
@@ -216,13 +220,11 @@ get_header();
 						?>
 
 						<button><a href="<?php echo esc_url( get_permalink() ); ?>">View Project</a></button>
-						<?php
-						?>
-					</div>
+											</div>
 					<?php
 				endwhile;
 				wp_reset_postdata();
-			?>
+				?>
 			</div>
 			<?php
 		endwhile; // End of the loop.

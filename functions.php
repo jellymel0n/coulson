@@ -149,22 +149,34 @@ function coulson_scripts() {
 	);
 
 	wp_enqueue_style( 'coulson-style', get_stylesheet_uri(), array(), _S_VERSION );
+
+	wp_enqueue_style( 'coulson-code-style', get_template_directory_uri() . '/code-styles/an-old-hope.min.css', array(), _S_VERSION );
+
 	wp_style_add_data( 'coulson-style', 'rtl', 'replace' );
 
 	wp_enqueue_script( 'coulson-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true );
 
 	wp_enqueue_script( 'coulson-accordion', get_template_directory_uri() . '/js/accordion.js', array(), _S_VERSION, true );
 
+	wp_enqueue_script( 'coulson-code-highlight', get_template_directory_uri() . '/js/highlight.min.js', array(), _S_VERSION, true );
+
+	wp_enqueue_script( 'coulson-highlight-init', get_template_directory_uri() . '/js/highlight-init.js', array(), _S_VERSION, true );
+
 	if ( is_archive() ) :
 		wp_enqueue_script( 'coulson-jquery', 'https://code.jquery.com/jquery-3.6.0.min.js', array(), _S_VERSION, true );
+
 		wp_enqueue_script( 'coulson-isotope', 'https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js', array(), _S_VERSION, true );
+
 		wp_enqueue_script( 'coulson-isotope-init', get_template_directory_uri() . '/js/isotope-init.js', array(), _S_VERSION, true );
 	endif;
 
 	if ( is_front_page() ) :
 		wp_enqueue_script( 'coulson-jquery', 'https://code.jquery.com/jquery-3.6.0.min.js', array(), _S_VERSION, true );
+
 		wp_enqueue_script( 'coulson-gsap', 'https://cdnjs.cloudflare.com/ajax/libs/gsap/3.8.0/gsap.min.js', array(), _S_VERSION, true );
+
 		wp_enqueue_script( 'coulson-gsap-text', 'https://cdnjs.cloudflare.com/ajax/libs/gsap/3.8.0/TextPlugin.min.js', array(), _S_VERSION, true );
+
 		wp_enqueue_script( 'coulson-gsap-settings', get_template_directory_uri() . '/js/gsap-settings.js', array(), _S_VERSION, true );
 	endif;
 
