@@ -191,40 +191,62 @@
 				font-size: 1em;
 			}
 
-			#live-site-link,
+			#live-site-link ,
 			#github-link {
-				width: 40%;
-				border: 2px solid #282828;
-				background-color:  #282828;
-				text-align: center;
-				padding: 1rem 0;
-				border-radius: 8px;
-				box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
-				margin: 1rem 0;
-				max-width: 12.5rem;
+
+				margin: 2rem 0;
+				
+				a {
+					width: 40%;
+					border: 2px solid #282828;
+					background-color:  #282828;
+					text-align: center;
+					padding: 1.3rem 1.5rem;
+					border-radius: 8px;
+					box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+					margin: 1rem 0;
+					max-width: 12.5rem;
+					transition: 0.2s ease;
+
+					&:active {
+
+						transform-origin: scale(1.1);
+						background-color: #ff7069;
+						color: #282828;
+	
+						&:before {
+							color:#282828;
+						}
+					}
+
+				}
 			}
 
-			#live-site-link {
+			#live-site-link a {
 
 				&:before {
 					content: '\f5fc';
 					font-family: 'FontAwesome';
-					font-size: 18px;
+					font-size: 15px;
 					font-weight: 500;
 					margin-right: 5px;
-					color: #fff
+					color: #fff;
+					transition: 0.2s ease;
 				}
 			}
 
-			#github-link {
+			#github-link a {
+
+				padding: 21px 30.5px;
 
 				&:before {
 					content: '\f09b';
 					font-family: 'FontAwesome';
-					font-size: 20px;
+					font-size: 15px;
 					font-weight: 500;
 					margin-right: 5px;
-					color: #fff
+					color: #fff;
+					transition: 0.2s ease;
 				}
 			}
 		}
@@ -400,25 +422,19 @@
 				
 				}
 
-				button {
+				a.view-more-button {
 					background-color: #282828;
+					text-align: center;
 					width: 100%;
-					margin:0;
 					padding: 1.2rem 0;
-					border: none;
 					border-radius: 0;
-
-					a {
-						text-decoration: none;
-						color: #fff;
-						font-size: 1.2rem;
-						font-weight: 500;
-						display: inline-block;     
-						position: relative;    
-						z-index: 1;     
-						padding: 2em;     
-						margin: -2em; 
-					}
+					text-decoration: none;
+					color: #fff;
+					font-size: 1.2rem;
+					font-weight: 400;
+					display: inline-block;     
+					z-index: 1;     
+					padding: 1.6rem;  
 				}
 			}
 		}
@@ -453,29 +469,35 @@
 
 				#live-site-link {
 
-					margin-right: 10%;
+					margin-right: 5%;
 
 					a {
 						font-size: 1.2em;
 						vertical-align: text-bottom;
+						padding: 1.3rem 1.7rem;
+
+						&:before {
+							font-size: 19px;
+							margin-right: 10px;
+						}
 					}
 
-					&:before {
-						font-size: 25px;
-						margin-right: 10px;
-					}
+					
 				}
 
 				#github-link {
 
+					margin-left: 5%;
+
 					a {
 						font-size: 1.2em;
 						vertical-align: text-bottom;
-					}
+						padding: 21px 34.5px;
 
-					&:before {
-						font-size: 27px;
-						margin-right: 10px;
+						&:before {
+							font-size: 20px;
+							margin-right: 10px;
+						}
 					}
 				}
 
@@ -560,6 +582,7 @@
 				justify-content: center;
 				max-width: 950px;
 				margin: 0 auto;
+				margin-bottom: 3rem;
 			}
 		}
 	}
@@ -589,14 +612,31 @@
 
 					a {
 						font-size: 1.4em;
+
+						&:hover {
+
+							transform-origin: scale(1.1);
+							background-color: #ff7069;
+							color: #282828;
+
+							&:before {
+								color:#282828;
+							}
+						}
 					}
 				}
 
 				#github-link {
 
-					&:before {
-						font-size: 25px;
+					a {
+						padding: 20.7px 34.5px;
+
+						&:before {
+							font-size: 22px;
+						}
 					}
+
+					
 				}
 			}
 
@@ -624,6 +664,11 @@
 
 			button.accordion-tab {
 				font-size: 1.5em;
+
+				&:hover {
+
+					background-color: #313d4f;
+				}
 			}
 
 			.accordion-content {
@@ -649,13 +694,59 @@
 				.view-more-container {
 
 					max-width: 450px;
+					margin-bottom: 3rem;
+					transition: 0.3s ease-in-out;
+
+					&:hover {
+
+						transform: scale(1.05);
+						box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+					}
 				}
 			}
 		}
 	}
 }
 
+// Query for isotope buttons on Archive page - 351px and below
+@media screen and (max-width: 351px) {
 
+	.archive {
+		.site {
+			.site-main {
+
+				div.button-group {
+
+					margin: 2.5rem auto;
+					margin-top: 2rem;
+					display: flex;
+					flex-wrap: wrap;
+					text-align: center;
+					justify-content: center;
+	
+					button {
+	
+						color: #fff;
+						border: 3px solid #282828;
+						background-color: #282828;
+						border-radius: 25px;
+						width: 8rem;
+						padding: 1rem 0;
+						margin: 0.4rem;
+						font-weight: 500;
+					}
+	
+					button.active {
+	
+						color: #282828;
+						background-color: #ff7069;
+					}
+				}
+
+			}
+		}
+	}
+}
 
 
 // Styles for Projects Archive Page - mobile
@@ -666,10 +757,28 @@
 
 			padding: 0 1rem;
 
+			h1 {
+			
+				position: relative;
+				font-size: 11vw;
+				font-weight: bold;
+				overflow: hidden;
+				margin: 0 auto;
+				text-align: center;
+				color: #282828;
+				padding-left: 6%;
+	
+	
+				span.archive-cursor {
+					font-weight: normal;
+				}
+			}
+
 			// Isotope filter buttons
 			.button-group {
 
 				margin: 2.5rem auto;
+				margin-top: 2rem;
 				max-width: 571px;
 				display: flex;
 				flex-wrap: wrap;
@@ -802,10 +911,19 @@
 					color: #fff;
 					font-size: 1.1em;
 					background-color: #282828;
-					padding: 0.6rem 1rem;
+					border: 3px solid #282828;
+					padding: 0.5rem 0.9rem;
 					border-radius: 25px;
 					margin-bottom: 3rem;
 					margin-top: 0.5rem;
+					transition: all 0.3s ease-in-out;
+
+						&:active {
+
+							color: #282828;
+							background-color: #ff7069;
+							transition: all 0.2s ease-in-out; 
+						}
 				}
 
 				&:nth-of-type(even) {
@@ -825,6 +943,12 @@
 		.site {
 
 			.site-main {
+
+				h1 {
+			
+					font-size: 7vw;
+					padding-left: 5%;
+				}
 
 				.button-group {
 					max-width: 700px;
@@ -855,8 +979,29 @@
 
 			.site-main {
 
+				h1 {
+			
+					font-size: 5.5rem;
+					padding-left: 3.5rem;
+
+				}
+
 				.button-group {
 					max-width: 1000px;
+
+					button {
+
+						transition: all 0.2s ease-in-out;
+
+						&:hover {
+
+							color: #282828;
+							border: 3px solid #282828;
+							background-color: #ff7069;
+							transition: all 0.1s ease-in-out; 
+							cursor: pointer;
+						}
+					}
 				}
 
 				#isotope-container {
@@ -866,9 +1011,31 @@
 					#isotope-item {
 						max-width: 500px;
 						margin: 1rem;
+
+						.archive-project-container {
+							transition: 0.3s ease-in-out;
+							
+							&:hover {
+								transform: scale(1.04);
+								box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+							}
+						}
 					}
 				}
 
+				.see-more-btn-container {
+					#see-more-btn {
+						border: 3px solid #282828;
+
+						&:hover {
+
+							color: #282828;
+							border: 3px solid #282828;
+							background-color: #ff7069;
+							transition: all 0.2s ease-in-out; 
+						}
+					}
+				}
 			}
 		}
 	}
@@ -1014,6 +1181,7 @@
 			img {
 				display: block;
 				max-height: 25rem;
+				max-width: 12rem;
 				border: 3px solid #282828;
 				border-radius: 8px;
 				margin: 0 auto;
@@ -1036,10 +1204,12 @@
 				color: #fff;
 				font-size: 1.4em;
 				background-color: #282828;
-				padding: 0.6rem 1rem;
+				padding: 0.5rem 0.9rem;
 				border-radius: 25px;
 				margin: 0 auto;
 				margin-bottom: 3rem;
+				border: 3px solid #282828;
+				transition: all 0.3s ease-in-out;
 
 				&:before {
 					content: '\f0e0';
@@ -1048,6 +1218,17 @@
 					color: #fff;
 					margin-right: 10px;
 					text-align: center;
+					transition: all 0.3s ease-in-out;
+				}
+
+				&:active {
+					background-color: #ff7069;
+					color: #282828;
+
+					&:before {
+						color: #282828;
+						transition: all 0.3s ease-in-out;
+					}
 				}
 			}
 		}
@@ -1163,8 +1344,8 @@
 
 					img {
 						display: block;
-						max-height: 30rem;
-						margin-right: 1rem;
+						max-height: 30rem;						margin-right: 1rem;
+						max-width: 15rem;
 					}
 				}
 		
@@ -1186,7 +1367,7 @@
 				#contact-link {
 
 					font-size: 1.6em;
-					padding: 0.7rem 1.2rem;
+					padding: 0.6rem 1.1rem;
 					margin: 0 auto;
 					margin-top: 1.5rem;
 					margin-bottom: 4.2rem;
@@ -1268,6 +1449,7 @@
 					img {
 						display: block;
 						max-height: 35rem;
+						max-width: 20rem;
 						margin-right: 5rem;
 					}
 				}
@@ -1287,15 +1469,38 @@
 				#contact-link {
 
 					font-size: 1.8em;
-					padding: 0.7rem 1.2rem;
+					padding: 0.6rem 1.1rem;
 					margin: 0 auto;
 					margin-top: 2.5rem;
 					margin-bottom: 6rem;
+					transition: all 0.3s ease-in-out;
 	
 					&:before {
 
 						font-size: 27px;
+						transition: all 0.3s ease-in-out;
 					}
+
+					&:hover {
+						background-color: #ff7069;
+						color: #282828;
+
+
+						&:before {
+							color: #282828;
+							transition: all 0.3s ease-in-out;
+						}
+					}
+				}
+			}
+
+			.accordion-tab {
+
+				transition: all 0.3s ease-in-out;
+
+				&:hover {
+
+					background-color: #313d4f;
 				}
 			}
 
@@ -1423,11 +1628,19 @@
 			text-decoration: none;
 			color: #fff;
 			background-color: #282828;
-			padding: 0.6rem 1.2rem;
+			border: 3px solid #282828;
+			padding: 0.5rem 1.1rem;
 			max-width: 131px;
 			border-radius: 25px;
 			text-align: center;
 			margin: 0 auto;
+			transition: all 0.3s ease-in-out;
+
+			&:active {
+
+				background-color: #ff7069;
+                color: #282828;
+			}
 
 		}
 
@@ -1465,7 +1678,7 @@
 
 				max-width: 190px;
 				font-size: 1.3em;
-				padding: 1rem 2rem;
+				padding: 0.8rem 1.9rem;
 			}
 		}
 	}
@@ -1492,6 +1705,15 @@
 			p#thank-you-text {
 
 				font-size: 1.6vw;
+			}
+
+			a#thank-button {
+
+				&:hover {
+
+					background-color: #ff7069;
+                	color: #282828;
+				}
 			}
 		}
 	}

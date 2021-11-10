@@ -19,8 +19,13 @@ footer {
 				svg {
 					width: 40px;
 					height: 40px;
+					transition: all 0.2s ease-in-out;
 
 					&:hover {
+						fill: #ff7069;
+					}
+
+					&:active {
 						fill: #ff7069;
 					}
 				}
@@ -114,8 +119,8 @@ footer {
 						}
 
 						#icon-about {
-							width: 54px;
-							padding-left: 2px;
+							width: 55px;
+							padding-left: 4px;
 						}
 
 						#icon-contact {
@@ -131,17 +136,16 @@ footer {
 						}
 
 						#home-text {
-							padding-right: 2px;
 							padding-top: 2.6px;
 						}
 
 						#projects-text {
-							padding-top: 6.3px;
+							padding-top: 7.1px;
 						}
 
 						#about-text,
 						#contact-text {
-							padding-top: 3px;
+							padding-top: 4px;
 						}
 					}
 				}

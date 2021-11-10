@@ -19,7 +19,9 @@ get_header();
 			$featured_img = get_field( 'project_featured_image' );
 			if ( ! empty( $featured_img ) ) :
 				?>
-				<img src="<?php echo esc_url( $featured_img['url'] ); ?>" alt="<?php echo esc_attr( $featured_img['alt'] ); ?>" id='single-img' />
+				<?php
+				echo wp_get_attachment_image( $featured_img, 'full', '', array( 'id' => 'single-img' ) );
+				?>
 				<?php
 			endif;
 			?>
@@ -114,8 +116,10 @@ get_header();
 						<p id="planning-intro"> <?php echo acf_esc_html( $planning['planning_text'] ); ?> </p>
 
 						<figure>
-							<img src="<?php echo esc_url( $planning['planning_image']['url'] ); ?>" alt="<?php echo esc_attr( $planning['planning_image']['alt'] ); ?>" />
-							<figcaption><?php echo esc_html( $planning['planning_image']['caption'] ); ?></figcaption>
+							<?php 
+							echo wp_get_attachment_image( $planning['planning_image'], 'large' )
+							?>
+							<figcaption><?php echo esc_html( wp_get_attachment_caption( $planning['planning_image'] ) ); ?></figcaption>
 						</figure>
 
 						<div id="planning-outro"><?php echo acf_esc_html( $planning['planning_list'] ); ?></div>
@@ -132,12 +136,16 @@ get_header();
 				if ( $design ) :
 					?>
 					<section id="design">
-						<img id="design-img" src="<?php echo esc_url( $design['design_image']['url'] ); ?>" alt="<?php echo esc_attr( $design['design_image']['alt'] ); ?>" />
+						<?php
+						echo wp_get_attachment_image( $design['design_image'], 'large' );
+						?>
 
 						<p id='design-intro'><?php echo acf_esc_html( $design['design_text'] ); ?></p>
 
 						<?php if ( $design['design_img_2'] ) : ?>
-							<img src="<?php echo esc_url( $design['design_image_2']['url'] ); ?>" alt="<?php echo esc_attr( $design['design_image_2']['alt'] ); ?>" />
+							<?php
+							echo wp_get_attachment_image( $design['design_image_2'], 'large' );
+							?>
 						<?php endif; ?>
 					</section>
 					<?php
@@ -176,7 +184,9 @@ get_header();
 					<section id="reflections">
 						<p id='reflections-intro'><?php echo acf_esc_html( $reflections['reflections_text'] ); ?></p>
 
-						<img src="<?php echo esc_url( $reflections['reflections_image']['url'] ); ?>" alt="<?php echo esc_attr( $reflections['reflections_image']['alt'] ); ?>" />
+						<?php
+						echo wp_get_attachment_image( $reflections['reflections_image'], 'large' );
+						?>
 					</section>
 					<?php
 				endif;
@@ -213,14 +223,16 @@ get_header();
 						if ( ! empty( $more_image ) ) :
 							?>
 							<a href="<?php echo esc_url( get_permalink() ); ?>">
-								<img src="<?php echo esc_url( $more_image['url'] ); ?>" alt="<?php echo esc_attr( $more_image['alt'] ); ?>" />
+								<?php
+								echo wp_get_attachment_image( $more_image, 'large' );
+								?>
 							</a>
 							<?php
 						endif;
 						?>
 
-						<button><a href="<?php echo esc_url( get_permalink() ); ?>">View Project</a></button>
-											</div>
+						<a href="<?php echo esc_url( get_permalink() ); ?>" class='view-more-button'>View Project</a>
+					</div>
 					<?php
 				endwhile;
 				wp_reset_postdata();

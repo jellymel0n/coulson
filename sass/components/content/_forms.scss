@@ -40,10 +40,15 @@
                         border-radius: 25px;
                         width: 35%;
                         max-width: 8.625rem;
-                        border: 3px solid #ff7069;
+                        border: 3px solid #282828;
                         background-color: #282828;
-                        color: #ff7069;
+                        color: #fff;
+                        transition: all 0.3s ease-in-out;
                         
+                        &:active {
+                            background-color: #ff7069;
+                            color: #282828;
+                        }
                     }
                 }
             }
@@ -113,6 +118,13 @@
                             max-width: 9.2rem;
                             font-size: 1.2em;
                             margin-bottom: 3.8rem;
+
+                            &:hover {
+
+                                background-color: #ff7069;
+                                color: #282828;
+                                cursor: pointer;
+                            }
                         }
                     }
                 }

@@ -640,8 +640,12 @@ footer .footer-nav ul li {
 footer .footer-nav ul li svg {
 	width: 40px;
 	height: 40px;
+	transition: all 0.2s ease-in-out;
 }
 footer .footer-nav ul li svg:hover {
+	fill: #ff7069;
+}
+footer .footer-nav ul li svg:active {
 	fill: #ff7069;
 }
 footer .footer-nav ul li a {
@@ -712,8 +716,8 @@ footer .footer-nav p {
 		padding-left: 2px;
 	}
 	header.site-header nav.mobile-navigation ul li a #icon-about {
-		width: 54px;
-		padding-left: 2px;
+		width: 55px;
+		padding-left: 4px;
 	}
 	header.site-header nav.mobile-navigation ul li a #icon-contact {
 		padding-bottom: 4px;
@@ -726,15 +730,14 @@ footer .footer-nav p {
 		font-size: 0.8rem;
 	}
 	header.site-header nav.mobile-navigation ul li a #home-text {
-		padding-right: 2px;
 		padding-top: 2.6px;
 	}
 	header.site-header nav.mobile-navigation ul li a #projects-text {
-		padding-top: 6.3px;
+		padding-top: 7.1px;
 	}
 	header.site-header nav.mobile-navigation ul li a #about-text,
 header.site-header nav.mobile-navigation ul li a #contact-text {
-		padding-top: 3px;
+		padding-top: 4px;
 	}
 
 	footer {
@@ -977,31 +980,51 @@ header.site-header .main-navigation ul li.focus > ul {
 }
 .single-coulson-projects .site #links #live-site-link,
 .single-coulson-projects .site #links #github-link {
+	margin: 2rem 0;
+}
+.single-coulson-projects .site #links #live-site-link a,
+.single-coulson-projects .site #links #github-link a {
 	width: 40%;
 	border: 2px solid #282828;
 	background-color: #282828;
 	text-align: center;
-	padding: 1rem 0;
+	padding: 1.3rem 1.5rem;
 	border-radius: 8px;
 	box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
 	margin: 1rem 0;
 	max-width: 12.5rem;
+	transition: 0.2s ease;
 }
-.single-coulson-projects .site #links #live-site-link:before {
+.single-coulson-projects .site #links #live-site-link a:active,
+.single-coulson-projects .site #links #github-link a:active {
+	transform-origin: scale(1.1);
+	background-color: #ff7069;
+	color: #282828;
+}
+.single-coulson-projects .site #links #live-site-link a:active:before,
+.single-coulson-projects .site #links #github-link a:active:before {
+	color: #282828;
+}
+.single-coulson-projects .site #links #live-site-link a:before {
 	content: "\f5fc";
 	font-family: "FontAwesome";
-	font-size: 18px;
+	font-size: 15px;
 	font-weight: 500;
 	margin-right: 5px;
 	color: #fff;
+	transition: 0.2s ease;
 }
-.single-coulson-projects .site #links #github-link:before {
+.single-coulson-projects .site #links #github-link a {
+	padding: 21px 30.5px;
+}
+.single-coulson-projects .site #links #github-link a:before {
 	content: "\f09b";
 	font-family: "FontAwesome";
-	font-size: 20px;
+	font-size: 15px;
 	font-weight: 500;
 	margin-right: 5px;
 	color: #fff;
+	transition: 0.2s ease;
 }
 .single-coulson-projects .site #technology-used,
 .single-coulson-projects .site #other-technology {
@@ -1137,24 +1160,19 @@ header.site-header .main-navigation ul li.focus > ul {
 .single-coulson-projects .site #view-more-section .view-more-container img {
 	margin: 0;
 }
-.single-coulson-projects .site #view-more-section .view-more-container button {
+.single-coulson-projects .site #view-more-section .view-more-container a.view-more-button {
 	background-color: #282828;
+	text-align: center;
 	width: 100%;
-	margin: 0;
 	padding: 1.2rem 0;
-	border: none;
 	border-radius: 0;
-}
-.single-coulson-projects .site #view-more-section .view-more-container button a {
 	text-decoration: none;
 	color: #fff;
 	font-size: 1.2rem;
-	font-weight: 500;
+	font-weight: 400;
 	display: inline-block;
-	position: relative;
 	z-index: 1;
-	padding: 2em;
-	margin: -2em;
+	padding: 1.6rem;
 }
 
 @media screen and (min-width: 768px) {
@@ -1173,22 +1191,27 @@ header.site-header .main-navigation ul li.focus > ul {
 		justify-content: center;
 	}
 	.single-coulson-projects .site #links #live-site-link {
-		margin-right: 10%;
+		margin-right: 5%;
 	}
 	.single-coulson-projects .site #links #live-site-link a {
 		font-size: 1.2em;
 		vertical-align: text-bottom;
+		padding: 1.3rem 1.7rem;
 	}
-	.single-coulson-projects .site #links #live-site-link:before {
-		font-size: 25px;
+	.single-coulson-projects .site #links #live-site-link a:before {
+		font-size: 19px;
 		margin-right: 10px;
+	}
+	.single-coulson-projects .site #links #github-link {
+		margin-left: 5%;
 	}
 	.single-coulson-projects .site #links #github-link a {
 		font-size: 1.2em;
 		vertical-align: text-bottom;
+		padding: 21px 34.5px;
 	}
-	.single-coulson-projects .site #links #github-link:before {
-		font-size: 27px;
+	.single-coulson-projects .site #links #github-link a:before {
+		font-size: 20px;
 		margin-right: 10px;
 	}
 	.single-coulson-projects .site #intro-info {
@@ -1245,6 +1268,7 @@ header.site-header .main-navigation ul li.focus > ul {
 		justify-content: center;
 		max-width: 950px;
 		margin: 0 auto;
+		margin-bottom: 3rem;
 	}
 }
 @media screen and (min-width: 1100px) {
@@ -1259,8 +1283,21 @@ header.site-header .main-navigation ul li.focus > ul {
 .single-coulson-projects .site #links #github-link a {
 		font-size: 1.4em;
 	}
-	.single-coulson-projects .site #links #github-link:before {
-		font-size: 25px;
+	.single-coulson-projects .site #links #live-site-link a:hover,
+.single-coulson-projects .site #links #github-link a:hover {
+		transform-origin: scale(1.1);
+		background-color: #ff7069;
+		color: #282828;
+	}
+	.single-coulson-projects .site #links #live-site-link a:hover:before,
+.single-coulson-projects .site #links #github-link a:hover:before {
+		color: #282828;
+	}
+	.single-coulson-projects .site #links #github-link a {
+		padding: 20.7px 34.5px;
+	}
+	.single-coulson-projects .site #links #github-link a:before {
+		font-size: 22px;
 	}
 	.single-coulson-projects .site #intro-info {
 		max-width: 81.25rem;
@@ -1278,6 +1315,9 @@ header.site-header .main-navigation ul li.focus > ul {
 	.single-coulson-projects .site button.accordion-tab {
 		font-size: 1.5em;
 	}
+	.single-coulson-projects .site button.accordion-tab:hover {
+		background-color: #313d4f;
+	}
 	.single-coulson-projects .site .accordion-content p {
 		font-size: 1.2em;
 	}
@@ -1293,13 +1333,57 @@ header.site-header .main-navigation ul li.focus > ul {
 	}
 	.single-coulson-projects .site #view-more-section .view-more-container {
 		max-width: 450px;
+		margin-bottom: 3rem;
+		transition: 0.3s ease-in-out;
+	}
+	.single-coulson-projects .site #view-more-section .view-more-container:hover {
+		transform: scale(1.05);
+		box-shadow: #26394d 0px 20px 30px -10px;
+	}
+}
+@media screen and (max-width: 351px) {
+	.archive .site .site-main div.button-group {
+		margin: 2.5rem auto;
+		margin-top: 2rem;
+		display: flex;
+		flex-wrap: wrap;
+		text-align: center;
+		justify-content: center;
+	}
+	.archive .site .site-main div.button-group button {
+		color: #fff;
+		border: 3px solid #282828;
+		background-color: #282828;
+		border-radius: 25px;
+		width: 8rem;
+		padding: 1rem 0;
+		margin: 0.4rem;
+		font-weight: 500;
+	}
+	.archive .site .site-main div.button-group button.active {
+		color: #282828;
+		background-color: #ff7069;
 	}
 }
 .archive .site .site-main {
 	padding: 0 1rem;
 }
+.archive .site .site-main h1 {
+	position: relative;
+	font-size: 11vw;
+	font-weight: bold;
+	overflow: hidden;
+	margin: 0 auto;
+	text-align: center;
+	color: #282828;
+	padding-left: 6%;
+}
+.archive .site .site-main h1 span.archive-cursor {
+	font-weight: normal;
+}
 .archive .site .site-main .button-group {
 	margin: 2.5rem auto;
+	margin-top: 2rem;
 	max-width: 571px;
 	display: flex;
 	flex-wrap: wrap;
@@ -1398,10 +1482,17 @@ header.site-header .main-navigation ul li.focus > ul {
 	color: #fff;
 	font-size: 1.1em;
 	background-color: #282828;
-	padding: 0.6rem 1rem;
+	border: 3px solid #282828;
+	padding: 0.5rem 0.9rem;
 	border-radius: 25px;
 	margin-bottom: 3rem;
 	margin-top: 0.5rem;
+	transition: all 0.3s ease-in-out;
+}
+.archive .site .site-main .see-more-btn-container #see-more-btn:active {
+	color: #282828;
+	background-color: #ff7069;
+	transition: all 0.2s ease-in-out;
 }
 .archive .site .site-main .see-more-btn-container:nth-of-type(even) {
 	display: block;
@@ -1409,6 +1500,10 @@ header.site-header .main-navigation ul li.focus > ul {
 }
 
 @media screen and (min-width: 960px) {
+	.archive .site .site-main h1 {
+		font-size: 7vw;
+		padding-left: 5%;
+	}
 	.archive .site .site-main .button-group {
 		max-width: 700px;
 	}
@@ -1422,8 +1517,22 @@ header.site-header .main-navigation ul li.focus > ul {
 	}
 }
 @media screen and (min-width: 1100px) {
+	.archive .site .site-main h1 {
+		font-size: 5.5rem;
+		padding-left: 3.5rem;
+	}
 	.archive .site .site-main .button-group {
 		max-width: 1000px;
+	}
+	.archive .site .site-main .button-group button {
+		transition: all 0.2s ease-in-out;
+	}
+	.archive .site .site-main .button-group button:hover {
+		color: #282828;
+		border: 3px solid #282828;
+		background-color: #ff7069;
+		transition: all 0.1s ease-in-out;
+		cursor: pointer;
 	}
 	.archive .site .site-main #isotope-container {
 		max-width: 1064px;
@@ -1432,6 +1541,22 @@ header.site-header .main-navigation ul li.focus > ul {
 	.archive .site .site-main #isotope-container #isotope-item {
 		max-width: 500px;
 		margin: 1rem;
+	}
+	.archive .site .site-main #isotope-container #isotope-item .archive-project-container {
+		transition: 0.3s ease-in-out;
+	}
+	.archive .site .site-main #isotope-container #isotope-item .archive-project-container:hover {
+		transform: scale(1.04);
+		box-shadow: #26394d 0px 20px 30px -10px;
+	}
+	.archive .site .site-main .see-more-btn-container #see-more-btn {
+		border: 3px solid #282828;
+	}
+	.archive .site .site-main .see-more-btn-container #see-more-btn:hover {
+		color: #282828;
+		border: 3px solid #282828;
+		background-color: #ff7069;
+		transition: all 0.2s ease-in-out;
 	}
 }
 @media screen and (min-width: 1780px) {
@@ -1495,6 +1620,7 @@ header.site-header .main-navigation ul li.focus > ul {
 .page-id-18 .site #about-img img {
 	display: block;
 	max-height: 25rem;
+	max-width: 12rem;
 	border: 3px solid #282828;
 	border-radius: 8px;
 	margin: 0 auto;
@@ -1513,10 +1639,12 @@ header.site-header .main-navigation ul li.focus > ul {
 	color: #fff;
 	font-size: 1.4em;
 	background-color: #282828;
-	padding: 0.6rem 1rem;
+	padding: 0.5rem 0.9rem;
 	border-radius: 25px;
 	margin: 0 auto;
 	margin-bottom: 3rem;
+	border: 3px solid #282828;
+	transition: all 0.3s ease-in-out;
 }
 .page-id-18 .site #contact-link-container #contact-link:before {
 	content: "\f0e0";
@@ -1525,6 +1653,15 @@ header.site-header .main-navigation ul li.focus > ul {
 	color: #fff;
 	margin-right: 10px;
 	text-align: center;
+	transition: all 0.3s ease-in-out;
+}
+.page-id-18 .site #contact-link-container #contact-link:active {
+	background-color: #ff7069;
+	color: #282828;
+}
+.page-id-18 .site #contact-link-container #contact-link:active:before {
+	color: #282828;
+	transition: all 0.3s ease-in-out;
 }
 .page-id-18 .site button.accordion-tab {
 	width: 100%;
@@ -1609,6 +1746,7 @@ header.site-header .main-navigation ul li.focus > ul {
 		display: block;
 		max-height: 30rem;
 		margin-right: 1rem;
+		max-width: 15rem;
 	}
 	.page-id-18 .site #about-content #about-copy {
 		width: 65%;
@@ -1622,7 +1760,7 @@ header.site-header .main-navigation ul li.focus > ul {
 	}
 	.page-id-18 .site #contact-link-container #contact-link {
 		font-size: 1.6em;
-		padding: 0.7rem 1.2rem;
+		padding: 0.6rem 1.1rem;
 		margin: 0 auto;
 		margin-top: 1.5rem;
 		margin-bottom: 4.2rem;
@@ -1671,6 +1809,7 @@ header.site-header .main-navigation ul li.focus > ul {
 	.page-id-18 .site #about-content #about-img img {
 		display: block;
 		max-height: 35rem;
+		max-width: 20rem;
 		margin-right: 5rem;
 	}
 	.page-id-18 .site #about-content #about-copy {
@@ -1682,13 +1821,29 @@ header.site-header .main-navigation ul li.focus > ul {
 	}
 	.page-id-18 .site #contact-link-container #contact-link {
 		font-size: 1.8em;
-		padding: 0.7rem 1.2rem;
+		padding: 0.6rem 1.1rem;
 		margin: 0 auto;
 		margin-top: 2.5rem;
 		margin-bottom: 6rem;
+		transition: all 0.3s ease-in-out;
 	}
 	.page-id-18 .site #contact-link-container #contact-link:before {
 		font-size: 27px;
+		transition: all 0.3s ease-in-out;
+	}
+	.page-id-18 .site #contact-link-container #contact-link:hover {
+		background-color: #ff7069;
+		color: #282828;
+	}
+	.page-id-18 .site #contact-link-container #contact-link:hover:before {
+		color: #282828;
+		transition: all 0.3s ease-in-out;
+	}
+	.page-id-18 .site .accordion-tab {
+		transition: all 0.3s ease-in-out;
+	}
+	.page-id-18 .site .accordion-tab:hover {
+		background-color: #313d4f;
 	}
 	.page-id-18 .site .accordion-content #about-tech-icons ul {
 		max-width: 555px;
@@ -1768,11 +1923,17 @@ header.site-header .main-navigation ul li.focus > ul {
 	text-decoration: none;
 	color: #fff;
 	background-color: #282828;
-	padding: 0.6rem 1.2rem;
+	border: 3px solid #282828;
+	padding: 0.5rem 1.1rem;
 	max-width: 131px;
 	border-radius: 25px;
 	text-align: center;
 	margin: 0 auto;
+	transition: all 0.3s ease-in-out;
+}
+.page-id-139 .site a#thank-button:active {
+	background-color: #ff7069;
+	color: #282828;
 }
 .page-id-139 .site footer {
 	display: none;
@@ -1792,7 +1953,7 @@ header.site-header .main-navigation ul li.focus > ul {
 	.page-id-139 .site a#thank-button {
 		max-width: 190px;
 		font-size: 1.3em;
-		padding: 1rem 2rem;
+		padding: 0.8rem 1.9rem;
 	}
 }
 @media screen and (min-width: 1100px) {
@@ -1805,6 +1966,10 @@ header.site-header .main-navigation ul li.focus > ul {
 	}
 	.page-id-139 .site p#thank-you-text {
 		font-size: 1.6vw;
+	}
+	.page-id-139 .site a#thank-button:hover {
+		background-color: #ff7069;
+		color: #282828;
 	}
 }
 #form-container {
@@ -1832,9 +1997,14 @@ header.site-header .main-navigation ul li.focus > ul {
 	border-radius: 25px;
 	width: 35%;
 	max-width: 8.625rem;
-	border: 3px solid #ff7069;
+	border: 3px solid #282828;
 	background-color: #282828;
-	color: #ff7069;
+	color: #fff;
+	transition: all 0.3s ease-in-out;
+}
+#form-container #nf-form-2-cont .nf-form-wrap .nf-form-layout .nf-field-element input#nf-field-8:active {
+	background-color: #ff7069;
+	color: #282828;
 }
 #form-container #nf-form-2-cont .nf-form-wrap .nf-response-msg {
 	margin-top: 4rem;
@@ -1863,6 +2033,11 @@ header.site-header .main-navigation ul li.focus > ul {
 		max-width: 9.2rem;
 		font-size: 1.2em;
 		margin-bottom: 3.8rem;
+	}
+	#form-container #nf-form-2-cont .nf-form-wrap .nf-form-layout .nf-field-element input#nf-field-8:hover {
+		background-color: #ff7069;
+		color: #282828;
+		cursor: pointer;
 	}
 }
 /* Comments

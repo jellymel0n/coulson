@@ -14,6 +14,11 @@ get_header();
 
 		<?php if ( have_posts() ) : ?>
 
+			<h1 class='projects-header'>
+				<span class="archive-text"></span>
+				<span class="archive-cursor">|</span>
+			</h1>
+
 			<div class="button-group filter-button-group">
 				<button class='button active' data-filter="*">All Projects</button>
 				<button class='button' data-filter=".html-project">HTML/CSS</button>
@@ -66,7 +71,9 @@ get_header();
 								if ( ! empty( $featured_img ) ) :
 									?>
 										<a href=" <?php echo esc_url( get_permalink() ); ?> ">
-											<img src="<?php echo esc_url( $featured_img['url'] ); ?>" alt="<?php echo esc_attr( $featured_img['alt'] ); ?>" />
+											<?php
+											echo wp_get_attachment_image( $featured_img, 'large' );
+											?>
 										</a>
 										<?php
 									endif;

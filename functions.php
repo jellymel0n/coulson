@@ -168,6 +168,12 @@ function coulson_scripts() {
 		wp_enqueue_script( 'coulson-isotope', 'https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js', array(), _S_VERSION, true );
 
 		wp_enqueue_script( 'coulson-isotope-init', get_template_directory_uri() . '/js/isotope-init.js', array(), _S_VERSION, true );
+
+		wp_enqueue_script( 'coulson-gsap', 'https://cdnjs.cloudflare.com/ajax/libs/gsap/3.8.0/gsap.min.js', array(), _S_VERSION, true );
+
+		wp_enqueue_script( 'coulson-gsap-text', 'https://cdnjs.cloudflare.com/ajax/libs/gsap/3.8.0/TextPlugin.min.js', array(), _S_VERSION, true );
+
+		wp_enqueue_script( 'coulson-gsap-archive', get_template_directory_uri() . '/js/gsap-archive.js', array(), _S_VERSION, true );
 	endif;
 
 	if ( is_front_page() ) :

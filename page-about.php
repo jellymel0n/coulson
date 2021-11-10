@@ -28,15 +28,18 @@ get_header();
 					<h1> <?php the_field( 'about_header' ); ?></h1>
 				</section>
 				<?php
-				endif;
-				?>
+			endif;
+			?>
+
 			<div id="about-content">
 				<?php
 				$about_headshot = get_field( 'headshot_image' );
 				if ( ! empty( $about_headshot ) ) :
 					?>
 					<section id="about-img">
-						<img src="<?php echo esc_url( $about_headshot['url'] ); ?>" alt="<?php echo esc_attr( $about_headshot['alt'] ); ?>" />
+						<?php 
+						echo wp_get_attachment_image( $about_headshot, array( '275', '555' ) );
+						?>
 					</section>
 						<?php
 					endif;
