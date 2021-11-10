@@ -1233,7 +1233,10 @@ header.site-header .main-navigation ul li.focus > ul {
 		max-width: 28rem;
 	}
 	.single-coulson-projects .site #tech-container #technology-used {
-		margin-right: 2rem;
+		margin-right: 1rem;
+	}
+	.single-coulson-projects .site #tech-container #other-technology {
+		margin-left: 1rem;
 	}
 	.single-coulson-projects .site button.accordion-tab,
 .single-coulson-projects .site .accordion-content {
