@@ -1925,11 +1925,12 @@ header.site-header .main-navigation ul li.focus > ul {
 	background-color: #282828;
 	border: 3px solid #282828;
 	padding: 0.5rem 1.1rem;
-	max-width: 131px;
+	max-width: 140px;
 	border-radius: 25px;
 	text-align: center;
 	margin: 0 auto;
 	transition: all 0.3s ease-in-out;
+	margin-bottom: 8rem;
 }
 .page-id-139 .site a#thank-button:active {
 	background-color: #ff7069;
