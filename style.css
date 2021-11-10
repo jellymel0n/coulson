@@ -1711,6 +1711,102 @@ header.site-header .main-navigation ul li.focus > ul {
 		margin: 0.2rem 0.3rem;
 	}
 }
+.page-id-139 {
+	background: linear-gradient(134deg, #ff716995, #66ffc779, #ff716995, #66ffc779);
+	background-size: 400% 400%;
+	-webkit-animation: gradient-animation 32s ease infinite;
+	animation: gradient-animation 32s ease infinite;
+}
+@-webkit-keyframes gradient-animation {
+	0% {
+		background-position: 0% 9%;
+	}
+	50% {
+		background-position: 100% 92%;
+	}
+	100% {
+		background-position: 0% 9%;
+	}
+}
+@keyframes gradient-animation {
+	0% {
+		background-position: 0% 9%;
+	}
+	50% {
+		background-position: 100% 92%;
+	}
+	100% {
+		background-position: 0% 9%;
+	}
+}
+.page-id-139 .site h1 {
+	color: #313d4f;
+	font-size: 7vw;
+	white-space: nowrap;
+	text-align: center;
+	font-weight: 600;
+	letter-spacing: 1px;
+	margin-top: 23vh;
+}
+.page-id-139 .site h2 {
+	color: #282828;
+	font-size: 3.8vw;
+	text-align: center;
+	white-space: nowrap;
+	font-weight: 500;
+	margin-bottom: 3rem;
+}
+.page-id-139 .site p#thank-you-text {
+	color: #282828;
+	text-align: center;
+	font-weight: 500;
+	padding: 2rem 4rem;
+	margin: 0;
+}
+.page-id-139 .site a#thank-button {
+	display: block;
+	text-decoration: none;
+	color: #fff;
+	background-color: #282828;
+	padding: 0.6rem 1.2rem;
+	max-width: 131px;
+	border-radius: 25px;
+	text-align: center;
+	margin: 0 auto;
+}
+.page-id-139 .site footer {
+	display: none;
+}
+
+@media screen and (min-width: 768px) {
+	.page-id-139 .site h1 {
+		margin-top: 16vh;
+		font-size: 5vw;
+	}
+	.page-id-139 .site h2 {
+		font-size: 2.7vw;
+	}
+	.page-id-139 .site p#thank-you-text {
+		font-size: 1.8vw;
+	}
+	.page-id-139 .site a#thank-button {
+		max-width: 190px;
+		font-size: 1.3em;
+		padding: 1rem 2rem;
+	}
+}
+@media screen and (min-width: 1100px) {
+	.page-id-139 .site h1 {
+		font-size: 4.8vw;
+		margin-top: 12vh;
+	}
+	.page-id-139 .site h2 {
+		font-size: 2.2vw;
+	}
+	.page-id-139 .site p#thank-you-text {
+		font-size: 1.6vw;
+	}
+}
 #form-container {
 	margin-bottom: 1.5rem;
 	padding: 0 0.7rem;

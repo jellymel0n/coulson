@@ -1358,4 +1358,141 @@
 }
 
 
+// Thank You page styles - mobile 
+.page-id-139 {
 
+	background: linear-gradient(134deg, #ff716995, #66ffc779, #ff716995, #66ffc779);
+	background-size: 400% 400%;
+
+	-webkit-animation: gradient-animation 32s ease infinite;
+	-moz-animation: gradient-animation 32s ease infinite;
+	animation: gradient-animation 32s ease infinite;
+
+	
+	@-webkit-keyframes gradient-animation {
+		0%{background-position:0% 9%}
+		50%{background-position:100% 92%}
+		100%{background-position:0% 9%}
+	}
+	@-moz-keyframes gradient-animation {
+		0%{background-position:0% 9%}
+		50%{background-position:100% 92%}
+		100%{background-position:0% 9%}
+	}
+	@keyframes gradient-animation {
+		0%{background-position:0% 9%}
+		50%{background-position:100% 92%}
+		100%{background-position:0% 9%}
+	}
+
+	.site {
+
+		h1 {
+
+			color: #313d4f;
+			font-size: 7vw;
+			white-space: nowrap;
+			text-align: center;
+			font-weight: 600;
+			letter-spacing: 1px;
+			margin-top: 23vh;
+		}
+
+		h2 {
+
+			color: #282828;
+			font-size: 3.8vw;
+			text-align: center;
+			white-space: nowrap;
+			font-weight: 500;
+			margin-bottom: 3rem;
+		}
+
+		p#thank-you-text {
+
+			color: #282828;
+			text-align: center;
+			font-weight: 500;
+			padding: 2rem 4rem;
+			margin: 0;
+		}
+
+		a#thank-button {
+
+			display: block;
+			text-decoration: none;
+			color: #fff;
+			background-color: #282828;
+			padding: 0.6rem 1.2rem;
+			max-width: 131px;
+			border-radius: 25px;
+			text-align: center;
+			margin: 0 auto;
+
+		}
+
+		footer {
+			display: none;
+		}
+	}
+}
+
+// Thank You styles - Tablet
+
+@media screen and (min-width: $mq__tablet) {
+
+	.page-id-139 {
+
+		.site {
+
+			h1 {
+
+				margin-top: 16vh;
+				font-size: 5vw;
+			}
+
+			h2 {
+
+				font-size: 2.7vw;
+			}
+
+			p#thank-you-text {
+
+				font-size: 1.8vw;
+			}
+
+			a#thank-button {
+
+				max-width: 190px;
+				font-size: 1.3em;
+				padding: 1rem 2rem;
+			}
+		}
+	}
+}
+
+// Thank You styles - desktop
+
+@media screen and (min-width: $mq__desktop_small) {
+
+	.page-id-139 {
+
+		.site {
+
+			h1 {
+				font-size: 4.8vw;
+				margin-top: 12vh;
+			}
+
+			h2 {
+
+				font-size: 2.2vw;
+			}
+
+			p#thank-you-text {
+
+				font-size: 1.6vw;
+			}
+		}
+	}
+}
