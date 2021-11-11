@@ -116,7 +116,7 @@ get_header();
 						<p id="planning-intro"> <?php echo acf_esc_html( $planning['planning_text'] ); ?> </p>
 
 						<figure>
-							<?php 
+							<?php
 							echo wp_get_attachment_image( $planning['planning_image'], 'large' )
 							?>
 							<figcaption><?php echo esc_html( wp_get_attachment_caption( $planning['planning_image'] ) ); ?></figcaption>
@@ -163,11 +163,7 @@ get_header();
 						<p id='development-intro'><?php echo acf_esc_html( $development['development_text'] ); ?></p>
 
 						<div class='code-container'>
-							<pre>
-								<code>
-								<?php echo acf_esc_html( $development['development_code'] ); ?>	
-								</code>
-							</pre>
+							<pre><code><?php echo esc_html( $development['development_code'] ); ?></code></pre>
 						</div>
 					</section>
 					<?php

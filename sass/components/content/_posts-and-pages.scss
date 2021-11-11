@@ -56,7 +56,7 @@
 			font-weight: bold;
 			overflow: hidden;
 			margin: 0 auto;
-			padding-top: 24vh;
+			padding-top: 20vh;
 			color: #313d4f;
 
 			span.coulson {
@@ -208,7 +208,7 @@
 					max-width: 12.5rem;
 					transition: 0.2s ease;
 
-					&:active {
+					&:focus {
 
 						transform-origin: scale(1.1);
 						background-color: #ff7069;
@@ -372,6 +372,10 @@
 				border-radius: 8px;
 				margin: 0 auto;
 				margin-bottom: 1.5rem;
+			}
+
+			code {
+				border-radius: 8px;
 			}
 
 			
@@ -923,7 +927,7 @@
 					margin-top: 0.5rem;
 					transition: all 0.3s ease-in-out;
 
-						&:active {
+						&:focus {
 
 							color: #282828;
 							background-color: #ff7069;
@@ -1226,7 +1230,7 @@
 					transition: all 0.3s ease-in-out;
 				}
 
-				&:active {
+				&:focus {
 					background-color: #ff7069;
 					color: #282828;
 
@@ -1597,6 +1601,8 @@
 
 	.site {
 
+		height: 100vh;
+
 		h1 {
 
 			color: #313d4f;
@@ -1642,7 +1648,7 @@
 			transition: all 0.3s ease-in-out;
 			margin-bottom: 8rem;
 
-			&:active {
+			&:focus {
 
 				background-color: #ff7069;
                 color: #282828;

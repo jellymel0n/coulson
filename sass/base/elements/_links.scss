@@ -5,18 +5,13 @@ a {
 		color: $color__link-visited;
 	}
 
-	&:hover,
-	&:focus,
-	&:active {
-		color: $color__link-hover;
-	}
+	
 
 	&:focus {
 		outline: thin dotted;
 	}
 
-	&:hover,
-	&:active {
+	&:hover {
 		outline: 0;
 	}
 }

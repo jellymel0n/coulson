@@ -424,8 +424,6 @@ address {
 }
 
 pre {
-	background: #eee;
-	font-family: "Courier 10 Pitch", courier, monospace;
 	line-height: 1.6;
 	margin-bottom: 1.6em;
 	max-width: 100%;
@@ -460,6 +458,9 @@ big {
 --------------------------------------------- */
 body {
 	background: #f8faec;
+}
+body .site .site-header p.site-title {
+	display: none;
 }
 
 hr {
@@ -525,13 +526,10 @@ a {
 a:visited {
 	color: #800080;
 }
-a:hover, a:focus, a:active {
-	color: #191970;
-}
 a:focus {
 	outline: thin dotted;
 }
-a:hover, a:active {
+a:hover {
 	outline: 0;
 }
 
@@ -554,15 +552,6 @@ input[type=button]:hover,
 input[type=reset]:hover,
 input[type=submit]:hover {
 	border-color: #ccc #bbb #aaa;
-}
-button:active, button:focus,
-input[type=button]:active,
-input[type=button]:focus,
-input[type=reset]:active,
-input[type=reset]:focus,
-input[type=submit]:active,
-input[type=submit]:focus {
-	border-color: #aaa #bbb #bbb;
 }
 
 input[type=text],
@@ -645,7 +634,7 @@ footer .footer-nav ul li svg {
 footer .footer-nav ul li svg:hover {
 	fill: #ff7069;
 }
-footer .footer-nav ul li svg:active {
+footer .footer-nav ul li svg:focus {
 	fill: #ff7069;
 }
 footer .footer-nav ul li a {
@@ -901,7 +890,7 @@ header.site-header .main-navigation ul li.focus > ul {
 	font-weight: bold;
 	overflow: hidden;
 	margin: 0 auto;
-	padding-top: 24vh;
+	padding-top: 20vh;
 	color: #313d4f;
 }
 .home .intro-container h1 span.coulson {
@@ -995,14 +984,14 @@ header.site-header .main-navigation ul li.focus > ul {
 	max-width: 12.5rem;
 	transition: 0.2s ease;
 }
-.single-coulson-projects .site #links #live-site-link a:active,
-.single-coulson-projects .site #links #github-link a:active {
+.single-coulson-projects .site #links #live-site-link a:focus,
+.single-coulson-projects .site #links #github-link a:focus {
 	transform-origin: scale(1.1);
 	background-color: #ff7069;
 	color: #282828;
 }
-.single-coulson-projects .site #links #live-site-link a:active:before,
-.single-coulson-projects .site #links #github-link a:active:before {
+.single-coulson-projects .site #links #live-site-link a:focus:before,
+.single-coulson-projects .site #links #github-link a:focus:before {
 	color: #282828;
 }
 .single-coulson-projects .site #links #live-site-link a:before {
@@ -1122,6 +1111,9 @@ header.site-header .main-navigation ul li.focus > ul {
 	border-radius: 8px;
 	margin: 0 auto;
 	margin-bottom: 1.5rem;
+}
+.single-coulson-projects .site #development code {
+	border-radius: 8px;
 }
 .single-coulson-projects .site h2#view-more {
 	text-align: center;
@@ -1492,7 +1484,7 @@ header.site-header .main-navigation ul li.focus > ul {
 	margin-top: 0.5rem;
 	transition: all 0.3s ease-in-out;
 }
-.archive .site .site-main .see-more-btn-container #see-more-btn:active {
+.archive .site .site-main .see-more-btn-container #see-more-btn:focus {
 	color: #282828;
 	background-color: #ff7069;
 	transition: all 0.2s ease-in-out;
@@ -1658,11 +1650,11 @@ header.site-header .main-navigation ul li.focus > ul {
 	text-align: center;
 	transition: all 0.3s ease-in-out;
 }
-.page-id-18 .site #contact-link-container #contact-link:active {
+.page-id-18 .site #contact-link-container #contact-link:focus {
 	background-color: #ff7069;
 	color: #282828;
 }
-.page-id-18 .site #contact-link-container #contact-link:active:before {
+.page-id-18 .site #contact-link-container #contact-link:focus:before {
 	color: #282828;
 	transition: all 0.3s ease-in-out;
 }
@@ -1897,6 +1889,9 @@ header.site-header .main-navigation ul li.focus > ul {
 		background-position: 0% 9%;
 	}
 }
+.page-id-139 .site {
+	height: 100vh;
+}
 .page-id-139 .site h1 {
 	color: #313d4f;
 	font-size: 7vw;
@@ -1935,7 +1930,7 @@ header.site-header .main-navigation ul li.focus > ul {
 	transition: all 0.3s ease-in-out;
 	margin-bottom: 8rem;
 }
-.page-id-139 .site a#thank-button:active {
+.page-id-139 .site a#thank-button:focus {
 	background-color: #ff7069;
 	color: #282828;
 }
@@ -2006,7 +2001,7 @@ header.site-header .main-navigation ul li.focus > ul {
 	color: #fff;
 	transition: all 0.3s ease-in-out;
 }
-#form-container #nf-form-2-cont .nf-form-wrap .nf-form-layout .nf-field-element input#nf-field-8:active {
+#form-container #nf-form-2-cont .nf-form-wrap .nf-form-layout .nf-field-element input#nf-field-8:focus {
 	background-color: #ff7069;
 	color: #282828;
 }
